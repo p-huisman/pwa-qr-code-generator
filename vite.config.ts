@@ -5,7 +5,7 @@ import { defineConfig } from "vite";
 import packageJson from "./package.json";
 import createExternal from "vite-plugin-external";
 import injectExternals from "vite-plugin-inject-externals";
-
+import { viteStaticCopy } from 'vite-plugin-static-copy'
 
 const getPackageName = () => {
   return packageJson.name;
@@ -62,8 +62,19 @@ module.exports = defineConfig({
         "animejs": "anime",
       },
     }),
+    viteStaticCopy({
+      targets: [
+        {
+          src: 'favicon.svg',
+          dest: './'
+        },
+        {
+          src: 'src/index.html',
+          dest: './'
+        }
+      ]
+    })
   ],
   test: {
-
   }
 });

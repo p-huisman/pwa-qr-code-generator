@@ -1,6 +1,5 @@
 import "p-elements-core";
 import "./style.css";
-
 import QRCodeStyling, { Options } from "qr-code-styling";
 import css from "./qr-code-generator.css?inline";
 

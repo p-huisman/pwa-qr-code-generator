@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="nl">
   <head>
     <meta charset="UTF-8" />
     <meta
@@ -7,18 +7,18 @@
       content="default-src 'self'  data:; script-src 'self' https://unpkg.com; style-src 'self' 'unsafe-inline'"
     />
     <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="stylesheet" href="style.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>QR Code Generator</title>
-    <script
-      defer
-      src="https://unpkg.com/p-elements-core@1.2.2/dist/p-elements-core.js"
-    ></script>
   </head>
   <body>
     <div class="container">
       <p-qr-code-generator></p-qr-code-generator>
     </div>
-
-    <script type="module" src="/src/index.tsx"></script>
+    <script
+      defer
+      src="https://unpkg.com/p-elements-core@1.2.2/dist/p-elements-core.js"
+    ></script>
+    <script defer src="pwa-qr-code-generator.js"></script>
   </body>
 </html>
