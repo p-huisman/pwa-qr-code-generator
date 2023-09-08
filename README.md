@@ -20,8 +20,6 @@ This is a template repo. Click the green [Use this template](https://github.com/
 
 If you prefer to do it manually with the cleaner git history
 
-
-
 ## Checklist
 
 When you use this template, update the following:
