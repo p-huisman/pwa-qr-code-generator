@@ -60,9 +60,6 @@ export class PQrCodeGeneratorElement extends CustomElement {
         <input type="url" value={this.url} oninput={this.onDataChange} />
         <div id="QRContainer" afterCreate={this.onCreateQRElement}></div>
         <button onclick={this.onDownloadButtonClick}>Download QR code</button>
-        <a href="data:application/octet-stream;charset=utf-16le;base64,//5mAG8AbwAgAGIAYQByAAoA">
-          text file
-        </a>
       </div>
     );
   };
