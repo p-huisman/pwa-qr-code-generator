@@ -44,9 +44,7 @@ export class PQrCodeGeneratorElement extends CustomElement {
     const template = this.templateFromString(
       `<style>${css}</style><div class="root"></div>`
     );
-
     this.qrCode = new QRCodeStyling(this.defaultStyling);
-
     this.shadowRoot?.appendChild(template);
     const rootElement = this.shadowRoot?.querySelector<HTMLDivElement>(".root");
     if (rootElement) {
@@ -62,6 +60,9 @@ export class PQrCodeGeneratorElement extends CustomElement {
         <input type="url" value={this.url} oninput={this.onDataChange} />
         <div id="QRContainer" afterCreate={this.onCreateQRElement}></div>
         <button onclick={this.onDownloadButtonClick}>Download QR code</button>
+        <a href="data:application/octet-stream;charset=utf-16le;base64,//5mAG8AbwAgAGIAYQByAAoA">
+          text file
+        </a>
       </div>
     );
   };
@@ -84,15 +85,32 @@ export class PQrCodeGeneratorElement extends CustomElement {
       .replaceAll("?", "-")
       .replaceAll(".", "-")
       .replaceAll("/", "-");
-    console.log(defaultPath);
-    // const result = await (window as any).api.dialog(
-    //   'showSaveDialogSync',
-    //   {title: "QR code opslaan", defaultPath, filters: [{name: "SVG", extensions: ["svg"]}]}
-    // );
+    const svg = this.qrCode?._svg?.outerHTML;
+    if (svg) {
+      const f = svg.replace(
+        "<svg ",
+        '<svg xmlns="http://www.w3.org/2000/svg" '
+      );
 
-    // if(result && this.qrCode?._svg) {
-    //   const svg = this.qrCode._svg.outerHTML.replace("<svg ", "<svg xmlns=\"http://www.w3.org/2000/svg\" ");
-    //   (window as any).api.writeFile(result, svg, "utf-8");
-    // }
+      const opts = {
+        suggestedName: defaultPath,
+        types: [
+          {
+            description: "SVG Files",
+            accept: { "application/svg+xml": [".svg"] },
+          },
+        ],
+      };
+
+      const fileHandle = await (window as any)
+        .showSaveFilePicker(opts)
+        .catch(e => e);
+      if (fileHandle instanceof Error) {
+        return;
+      }
+      const writable = await fileHandle.createWritable();
+      await writable.write(f);
+      await writable.close();
+    }
   };
 }

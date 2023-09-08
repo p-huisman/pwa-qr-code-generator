@@ -16,7 +16,7 @@
     "build": "rimraf dist && tsc && vite build && dts-bundle-generator --config ./dts-bundle-generator.config.ts",
     "test": "vitest",
     "test:coverage": "vitest --coverage",
-    "lint:scripts": "eslint . --ext .ts --fix",
+    "lint": "eslint . --ext .ts --fix",
     "format": "prettier . --write",
     "_format": "npm run format:scripts",
     "prepare": "husky install && husky set .husky/pre-commit 'npx lint-staged' && git add .husky/pre-commit",
