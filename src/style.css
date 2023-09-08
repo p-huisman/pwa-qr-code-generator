@@ -5,15 +5,15 @@ body {
     Roboto,
     -apple-system,
     BlinkMacSystemFont,
-    'Helvetica Neue',
-    'Segoe UI',
-    'Oxygen',
-    'Ubuntu',
-    'Cantarell',
-    'Open Sans',
+    "Helvetica Neue",
+    "Segoe UI",
+    "Oxygen",
+    "Ubuntu",
+    "Cantarell",
+    "Open Sans",
     sans-serif;
-    color: #0f0f0f;
-    background-color: #f6f6f6;
+  color: #0f0f0f;
+  background-color: #f6f6f6;
 }
 
 .container {
