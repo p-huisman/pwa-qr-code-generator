@@ -5,7 +5,9 @@ import { defineConfig } from "vite";
 import packageJson from "./package.json";
 import createExternal from "vite-plugin-external";
 import injectExternals from "vite-plugin-inject-externals";
-import { viteStaticCopy } from 'vite-plugin-static-copy'
+import { viteStaticCopy } from "vite-plugin-static-copy";
+
+const isGhPages = process.argv.indexOf("--outDir") > -1 && process.argv[process.argv.indexOf("--outDir") + 1] === "docs";
 
 const getPackageName = () => {
   return packageJson.name;
@@ -70,11 +72,36 @@ module.exports = defineConfig({
         },
         {
           src: 'src/manifest.json',
-          dest: './'
+          dest: './',
+          transform: (contents) => {
+            const manifest = JSON.parse(contents.toString());
+            if (isGhPages){
+              manifest.start_url = '/pwa-qr-code-generator/index.html?pwa=1' + manifest.start_url;
+              manifest.id = '/pwa-qr-code-generator/index.html?pwa=1' + manifest.id;
+              manifest.scope = '/pwa-qr-code-generator/';
+
+              const icons = manifest.icons.map((icon: any) => {
+                return {
+                  ...icon,
+                  src: '/pwa-qr-code-generator' + icon.src
+                }
+              });
+
+              manifest.icons = icons;
+
+            }
+           return JSON.stringify(manifest, null, 2);
+          }
         },
         {
           src: 'src/index.html',
-          dest: './'
+          dest: './',
+          transform: (contents) => {
+            if (isGhPages){
+              return contents.toString().replace('href="manifest.json"', 'href="/pwa-qr-code-generator/manifest.json"');
+            }
+            return contents.toString();
+          }
         }
       ]
     })
