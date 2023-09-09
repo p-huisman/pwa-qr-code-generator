@@ -21,6 +21,7 @@ jobs:
           cd dist
           git init
           git add -A
+          git config --global --add safe.directory /github/workspace/dist
           git config --local user.email "peter.huisman@pggm.nl"
           git config --local user.name "GitHub Action"
           git commit -m 'deploy'
