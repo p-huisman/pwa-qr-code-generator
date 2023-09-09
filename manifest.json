@@ -3,26 +3,26 @@
   "name": "QR Code Generator",
   "icons": [
     {
-      "src": "/images/icon.svg",
+      "src": "/pwa-qr-code-generator/images/icon.svg",
       "type": "image/svg+xml",
       "sizes": "512x512"
     },
     {
-      "src": "/images/icon-192.png",
+      "src": "/pwa-qr-code-generator/images/icon-192.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "/images/icon-512.png",
+      "src": "/pwa-qr-code-generator/images/icon-512.png",
       "type": "image/png",
       "sizes": "512x512"
     }
   ],
-  "id": "/index.html?pwa=1",
-  "start_url": "/index.html?pwa=1",
+  "id": "/pwa-qr-code-generator/index.html?pwa=1/index.html?pwa=1",
+  "start_url": "/pwa-qr-code-generator/index.html?pwa=1/index.html?pwa=1",
   "background_color": "#444B99",
   "display": "standalone",
-  "scope": "/",
+  "scope": "/pwa-qr-code-generator/",
   "theme_color": "#444B99",
   "description": "Generate QR Code with style"
 }
