@@ -10,6 +10,10 @@
       "import": "./dist/pwa-qr-code-generator.mjs"
     }
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/p-huisman/pwa-qr-code-generator.git"
+  },
   "types": "./dist/pwa-qr-code-generator.d.ts",
   "scripts": {
     "dev": "vite --host",
