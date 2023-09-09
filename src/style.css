@@ -1,6 +1,6 @@
 :root {
   --gap-sm: 1em;
- 
+
   --color-white: hsl(0, 0%, 100%);
   --color-black: hsl(0, 0%, 0%);
 
@@ -57,7 +57,8 @@
   --border-radius-default: 0.6rem;
   --border-radius-button: var(--border-radius-xs);
 
-  --ff-default:  Roboto, -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI", "Oxygen", "Ubuntu", "Cantarell", "Open Sans", sans-serif;
+  --ff-default: Roboto, -apple-system, BlinkMacSystemFont, "Helvetica Neue",
+    "Segoe UI", "Oxygen", "Ubuntu", "Cantarell", "Open Sans", sans-serif;
   --ff-body: var(--ff-default);
   --ff-headings: var(--ff-default);
   --default-fontsize: 1.6rem;
@@ -83,10 +84,9 @@
   --dialog-color: var(--color-body);
   --dialog-border-radius: var(--border-radius-default);
   --dialog-border-color: var(--color-manatee);
-  --dialog-header-font:  600 1.2em/1.2 sans-serif;
+  --dialog-header-font: 600 1.2em/1.2 sans-serif;
   --dialog-body-font: 300 1em/1.5 sans-serif;
   --dialog-footer-font: 300 1em/1.5 sans-serif;
-
 }
 
 body {
