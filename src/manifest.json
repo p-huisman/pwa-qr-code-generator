@@ -18,12 +18,11 @@
       "sizes": "512x512"
     }
   ],
-  "id": "/?source=pwa",
-  "start_url": "/?source=pwa",
+  "id": "/index.html?pwa=1",
+  "start_url": "/index.html?pwa=1",
   "background_color": "#444B99",
   "display": "standalone",
   "scope": "/",
   "theme_color": "#444B99",
-  "shortcuts": [],
   "description": "Generate QR Code with style"
 }
