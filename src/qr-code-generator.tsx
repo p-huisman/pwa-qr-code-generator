@@ -56,7 +56,13 @@ export class PQrCodeGeneratorElement extends CustomElement {
   private render = () => {
     return (
       <div>
-        <input type="url" value={this.url} oninput={this.onDataChange} />
+        <label for="UrlInput">URL</label>
+        <input
+          id="UrlInput"
+          type="url"
+          value={this.url}
+          oninput={this.onDataChange}
+        />
         <div id="QRContainer" afterCreate={this.onCreateQRElement}></div>
         <button onclick={this.onDownloadButtonClick}>Download QR code</button>
       </div>
