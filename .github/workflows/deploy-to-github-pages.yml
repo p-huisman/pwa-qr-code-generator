@@ -3,7 +3,7 @@ name: GitHub Pages
 on:
   push:
     branches:
-      - master  # Set a branch name to trigger deployment
+      - master # Set a branch name to trigger deployment
   pull_request:
 
 jobs:
@@ -15,7 +15,7 @@ jobs:
       group: ${{ github.workflow }}-${{ github.ref }}
     steps:
       - uses: actions/checkout@v3
-        
+
       - name: Generate static files
         uses: actions/setup-node@v2
         with:
