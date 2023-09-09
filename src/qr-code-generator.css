@@ -1,0 +1,46 @@
+:host {
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+.root {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  width: calc(100% - 2em);
+  max-width: calc(350px + 1em);
+  flex: 1;
+}
+
+label {
+  /* screen reader only */
+  position: absolute;
+  left: -9999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+button,
+input[type="url"] {
+  padding: 5px;
+  margin-bottom: 2em;
+  width: calc(100% - 1em);
+  white-space: nowrap;
+}
+
+button {
+  margin-top: 2em;
+}
+
+#QRContainer canvas {
+  width: 300px;
+  margin-bottom: 2em;
+}
