@@ -65,7 +65,11 @@ module.exports = defineConfig({
     viteStaticCopy({
       targets: [
         {
-          src: 'favicon.svg',
+          src: 'src/images',
+          dest: './'
+        },
+        {
+          src: 'src/manifest.json',
           dest: './'
         },
         {
@@ -76,5 +80,6 @@ module.exports = defineConfig({
     })
   ],
   test: {
+    environment: "jsdom"
   }
 });

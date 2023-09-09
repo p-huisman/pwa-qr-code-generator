@@ -1,0 +1,50 @@
+
+dialog::backdrop {
+    background: var(--backdrop-color, rgba(0, 0, 0, 0.5));
+    backdrop-filter: var(--backdrop-filter, blur(1px));
+  }
+  
+  dialog[open] {
+    background: var(--dialog-background, Canvas);
+    color: var(--dialog-color, CanvasText);
+    border: 1px solid var(--dialog-border-color, ButtonBorder);
+    border-radius: var(--dialog-border-radius, 0);
+    box-shadow: var(--dialog-box-shadow, 2px 2px 5px hsla(220, 3%, 23%, 0.3));
+    width: 480px;
+    max-width: calc(100vw - 40px);
+    outline: none;
+  }
+  
+  .dialog-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-sm);
+    margin: var(--gap-xs);
+  }
+  
+  .dialog-header-container ::slotted(*) {
+    font: var(--dialog-header-font);
+    margin: 0;
+  }
+
+  .dialog-body-container ::slotted(*) {
+    font: var(--dialog-body-font);
+    margin: 0;
+  }
+
+  .dialog-footer-container ::slotted(*) {
+    font: var(--dialog-footer-font);
+    margin: 0;
+  }
+  
+
+  .dialog-footer-container slot {
+    display: flex;
+    gap: var(--gap-sm);
+  }
+  
+  .dialog-title {
+    font: var(--dialog-header-font);
+    margin: 0;
+  }
+  

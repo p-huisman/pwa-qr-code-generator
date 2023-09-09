@@ -1,112 +1,37 @@
-import "p-elements-core";
 import "./style.css";
-import QRCodeStyling, { Options } from "qr-code-styling";
-import css from "./qr-code-generator.css?inline";
+import "./qr-code-generator";
+import "./dialog";
 
-@CustomElementConfig({
-  tagName: "p-qr-code-generator",
-})
-export class PQrCodeGeneratorElement extends CustomElement {
-  constructor(
-    private defaultStyling: Options,
-    private qrCode?: QRCodeStyling
-  ) {
-    super();
-    this.defaultStyling = {
-      width: 1200,
-      height: 1200,
-      data: this.url,
-      qrOptions: {
-        mode: "Byte",
-        errorCorrectionLevel: "H",
-      },
-      imageOptions: {
-        hideBackgroundDots: false,
-        imageSize: 1,
-        margin: 0,
-      },
-      dotsOptions: {
-        type: "square",
-        color: "#393a3c",
-      },
-      backgroundOptions: {
-        color: "#ffffff",
-      },
-      cornersSquareOptions: {
-        type: "extra-rounded",
-        color: "#404b96",
-      },
-      cornersDotOptions: {
-        type: "square",
-      },
-    };
-    const template = this.templateFromString(
-      `<style>${css}</style><div class="root"></div>`
-    );
-    this.qrCode = new QRCodeStyling(this.defaultStyling);
-    this.shadowRoot?.appendChild(template);
-    const rootElement = this.shadowRoot?.querySelector<HTMLDivElement>(".root");
-    if (rootElement) {
-      this.createProjector(rootElement, this.render);
-    }
+import { PDialogElement } from "./dialog";
+
+let deferredPrompt;
+window.addEventListener("beforeinstallprompt", e => {
+  // Prevents the default mini-infobar or install dialog from appearing on mobile
+  e.preventDefault();
+  // Save the event because you'll need to trigger it later.
+  deferredPrompt = e;
+  // Show your customized install prompt for your PWA
+  // Your own UI doesn't have to be a single element, you
+  // can have buttons in different locations, or wait to prompt
+  // as part of a critical journey.
+  showInAppInstallPromotion();
+});
+
+async function showInAppInstallPromotion() {
+  await customElements.whenDefined("p-dialog");
+  const dialogCtor = (await customElements.get(
+    "p-dialog"
+  )) as typeof PDialogElement;
+
+  const promptResult = await dialogCtor.prompt(
+    "Installeren?",
+    <p>QR Code generator installeren?</p>,
+    ["Ja", "Nee, nu niet"]
+  );
+  if (promptResult === "Ja") {
+    deferredPrompt.prompt();
+    const { outcome } = await deferredPrompt.userChoice;
+    console.log(`User response to the install prompt: ${outcome}`);
+    deferredPrompt = null;
   }
-
-  private url: string = "https://pfzw.nl";
-
-  private render = () => {
-    return (
-      <div>
-        <input type="url" value={this.url} oninput={this.onDataChange} />
-        <div id="QRContainer" afterCreate={this.onCreateQRElement}></div>
-        <button onclick={this.onDownloadButtonClick}>Download QR code</button>
-      </div>
-    );
-  };
-
-  private onCreateQRElement = (n: HTMLElement) => {
-    this.qrCode?.append(n);
-  };
-
-  private onDataChange = (e: Event) => {
-    const htmlInput = e.target as HTMLInputElement;
-    this.url = htmlInput.value;
-    this.defaultStyling = { ...this.defaultStyling, data: this.url };
-    this.qrCode?.update(this.defaultStyling);
-  };
-
-  private onDownloadButtonClick = async () => {
-    const defaultPath = this.url
-      .split("//")[1]
-      .replaceAll("/", "-")
-      .replaceAll("?", "-")
-      .replaceAll(".", "-")
-      .replaceAll("/", "-");
-    const svg = this.qrCode?._svg?.outerHTML;
-    if (svg) {
-      const f = svg.replace(
-        "<svg ",
-        '<svg xmlns="http://www.w3.org/2000/svg" '
-      );
-
-      const opts = {
-        suggestedName: defaultPath,
-        types: [
-          {
-            description: "SVG Files",
-            accept: { "application/svg+xml": [".svg"] },
-          },
-        ],
-      };
-
-      const fileHandle = await (window as any)
-        .showSaveFilePicker(opts)
-        .catch(e => e);
-      if (fileHandle instanceof Error) {
-        return;
-      }
-      const writable = await fileHandle.createWritable();
-      await writable.write(f);
-      await writable.close();
-    }
-  };
 }
