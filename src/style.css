@@ -92,6 +92,7 @@ body {
   font-family: var(--ff-body);
   color: var(--color-body);
   background-color: var(--color-bg-body);
+  overflow-x: hidden;
 }
 
 input[type="submit"],
