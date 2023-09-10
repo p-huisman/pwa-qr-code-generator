@@ -124,8 +124,6 @@ p-top-nav {
   position: fixed;
 }
 
-
-
 button {
   background-color: var(--color-munsell-green);
   border: 1px solid transparent;
