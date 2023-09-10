@@ -10,7 +10,7 @@ var zt = { exports: {} };
       var j = { 192: (C, P) => {
         var Q, it, Z = function() {
           var U = function(w, m) {
-            var v = w, f = ut[m], c = null, b = 0, M = null, _ = [], S = {}, W = function(n, a) {
+            var v = w, f = ut[m], c = null, b = 0, M = null, x = [], S = {}, W = function(n, a) {
               c = function(o) {
                 for (var l = new Array(o), h = 0; h < o; h += 1) {
                   l[h] = new Array(o);
@@ -18,7 +18,7 @@ var zt = { exports: {} };
                     l[h][y] = null;
                 }
                 return l;
-              }(b = 4 * v + 17), d(0, 0), d(b - 7, 0), d(0, b - 7), r(), t(), i(n, a), v >= 7 && e(n), M == null && (M = s(v, f, _)), u(M, a);
+              }(b = 4 * v + 17), d(0, 0), d(b - 7, 0), d(0, b - 7), r(), t(), i(n, a), v >= 7 && e(n), M == null && (M = s(v, f, x)), u(M, a);
             }, d = function(n, a) {
               for (var o = -1; o <= 7; o += 1)
                 if (!(n + o <= -1 || b <= n + o))
@@ -35,8 +35,8 @@ var zt = { exports: {} };
                   var l = n[a], h = n[o];
                   if (c[l][h] == null)
                     for (var y = -2; y <= 2; y += 1)
-                      for (var x = -2; x <= 2; x += 1)
-                        c[l + y][h + x] = y == -2 || y == 2 || x == -2 || x == 2 || y == 0 && x == 0;
+                      for (var _ = -2; _ <= 2; _ += 1)
+                        c[l + y][h + _] = y == -2 || y == 2 || _ == -2 || _ == 2 || y == 0 && _ == 0;
                 }
             }, e = function(n) {
               for (var a = rt.getBCHTypeNumber(v), o = 0; o < 18; o += 1) {
@@ -54,12 +54,12 @@ var zt = { exports: {} };
                 y = !n && (l >> h & 1) == 1, h < 8 ? c[8][b - h - 1] = y : h < 9 ? c[8][15 - h - 1 + 1] = y : c[8][15 - h - 1] = y;
               c[b - 8][8] = !n;
             }, u = function(n, a) {
-              for (var o = -1, l = b - 1, h = 7, y = 0, x = rt.getMaskFunction(a), g = b - 1; g > 0; g -= 2)
+              for (var o = -1, l = b - 1, h = 7, y = 0, _ = rt.getMaskFunction(a), g = b - 1; g > 0; g -= 2)
                 for (g == 6 && (g -= 1); ; ) {
                   for (var k = 0; k < 2; k += 1)
                     if (c[l][g - k] == null) {
                       var D = !1;
-                      y < n.length && (D = (n[y] >>> h & 1) == 1), x(l, g - k) && (D = !D), c[l][g - k] = D, (h -= 1) == -1 && (y += 1, h = 7);
+                      y < n.length && (D = (n[y] >>> h & 1) == 1), _(l, g - k) && (D = !D), c[l][g - k] = D, (h -= 1) == -1 && (y += 1, h = 7);
                     }
                   if ((l += o) < 0 || b <= l) {
                     l -= o, o = -o;
@@ -68,8 +68,8 @@ var zt = { exports: {} };
                 }
             }, s = function(n, a, o) {
               for (var l = bt.getRSBlocks(n, a), h = dt(), y = 0; y < o.length; y += 1) {
-                var x = o[y];
-                h.put(x.getMode(), 4), h.put(x.getLength(), rt.getLengthInBits(x.getMode(), n)), x.write(h);
+                var _ = o[y];
+                h.put(_.getMode(), 4), h.put(_.getLength(), rt.getLengthInBits(_.getMode(), n)), _.write(h);
               }
               var g = 0;
               for (y = 0; y < l.length; y += 1)
@@ -113,7 +113,7 @@ var zt = { exports: {} };
                   o = yt(n);
                   break;
                 case "Alphanumeric":
-                  o = _t(n);
+                  o = xt(n);
                   break;
                 case "Byte":
                   o = lt(n);
@@ -124,7 +124,7 @@ var zt = { exports: {} };
                 default:
                   throw "mode:" + a;
               }
-              _.push(o), M = null;
+              x.push(o), M = null;
             }, S.isDark = function(n, a) {
               if (n < 0 || b <= n || a < 0 || b <= a)
                 throw n + "," + a;
@@ -134,8 +134,8 @@ var zt = { exports: {} };
             }, S.make = function() {
               if (v < 1) {
                 for (var n = 1; n < 40; n++) {
-                  for (var a = bt.getRSBlocks(n, f), o = dt(), l = 0; l < _.length; l++) {
-                    var h = _[l];
+                  for (var a = bt.getRSBlocks(n, f), o = dt(), l = 0; l < x.length; l++) {
+                    var h = x[l];
                     o.put(h.getMode(), 4), o.put(h.getLength(), rt.getLengthInBits(h.getMode(), n)), h.write(o);
                   }
                   var y = 0;
@@ -147,10 +147,10 @@ var zt = { exports: {} };
                 v = n;
               }
               W(!1, function() {
-                for (var x = 0, g = 0, k = 0; k < 8; k += 1) {
+                for (var _ = 0, g = 0, k = 0; k < 8; k += 1) {
                   W(!0, k);
                   var D = rt.getLostPoint(S);
-                  (k == 0 || x > D) && (x = D, g = k);
+                  (k == 0 || _ > D) && (_ = D, g = k);
                 }
                 return g;
               }());
@@ -168,17 +168,17 @@ var zt = { exports: {} };
             }, S.createSvgTag = function(n, a, o, l) {
               var h = {};
               typeof arguments[0] == "object" && (n = (h = arguments[0]).cellSize, a = h.margin, o = h.alt, l = h.title), n = n || 2, a = a === void 0 ? 4 * n : a, (o = typeof o == "string" ? { text: o } : o || {}).text = o.text || null, o.id = o.text ? o.id || "qrcode-description" : null, (l = typeof l == "string" ? { text: l } : l || {}).text = l.text || null, l.id = l.text ? l.id || "qrcode-title" : null;
-              var y, x, g, k, D = S.getModuleCount() * n + 2 * a, B = "";
-              for (k = "l" + n + ",0 0," + n + " -" + n + ",0 0,-" + n + "z ", B += '<svg version="1.1" xmlns="http://www.w3.org/2000/svg"', B += h.scalable ? "" : ' width="' + D + 'px" height="' + D + 'px"', B += ' viewBox="0 0 ' + D + " " + D + '" ', B += ' preserveAspectRatio="xMinYMin meet"', B += l.text || o.text ? ' role="img" aria-labelledby="' + p([l.id, o.id].join(" ").trim()) + '"' : "", B += ">", B += l.text ? '<title id="' + p(l.id) + '">' + p(l.text) + "</title>" : "", B += o.text ? '<description id="' + p(o.id) + '">' + p(o.text) + "</description>" : "", B += '<rect width="100%" height="100%" fill="white" cx="0" cy="0"/>', B += '<path d="', x = 0; x < S.getModuleCount(); x += 1)
-                for (g = x * n + a, y = 0; y < S.getModuleCount(); y += 1)
-                  S.isDark(x, y) && (B += "M" + (y * n + a) + "," + g + k);
+              var y, _, g, k, D = S.getModuleCount() * n + 2 * a, B = "";
+              for (k = "l" + n + ",0 0," + n + " -" + n + ",0 0,-" + n + "z ", B += '<svg version="1.1" xmlns="http://www.w3.org/2000/svg"', B += h.scalable ? "" : ' width="' + D + 'px" height="' + D + 'px"', B += ' viewBox="0 0 ' + D + " " + D + '" ', B += ' preserveAspectRatio="xMinYMin meet"', B += l.text || o.text ? ' role="img" aria-labelledby="' + p([l.id, o.id].join(" ").trim()) + '"' : "", B += ">", B += l.text ? '<title id="' + p(l.id) + '">' + p(l.text) + "</title>" : "", B += o.text ? '<description id="' + p(o.id) + '">' + p(o.text) + "</description>" : "", B += '<rect width="100%" height="100%" fill="white" cx="0" cy="0"/>', B += '<path d="', _ = 0; _ < S.getModuleCount(); _ += 1)
+                for (g = _ * n + a, y = 0; y < S.getModuleCount(); y += 1)
+                  S.isDark(_, y) && (B += "M" + (y * n + a) + "," + g + k);
               return (B += '" stroke="transparent" fill="black"/>') + "</svg>";
             }, S.createDataURL = function(n, a) {
               n = n || 2, a = a === void 0 ? 4 * n : a;
               var o = S.getModuleCount() * n + 2 * a, l = a, h = o - a;
-              return Ct(o, o, function(y, x) {
-                if (l <= y && y < h && l <= x && x < h) {
-                  var g = Math.floor((y - l) / n), k = Math.floor((x - l) / n);
+              return Ct(o, o, function(y, _) {
+                if (l <= y && y < h && l <= _ && _ < h) {
+                  var g = Math.floor((y - l) / n), k = Math.floor((_ - l) / n);
                   return S.isDark(k, g) ? 0 : 1;
                 }
                 return 1;
@@ -224,9 +224,9 @@ var zt = { exports: {} };
                   return X % 2 && R > 0 ? ot.substring(0, ot.length - X - 1) + Array(X + 1).join("▀") : ot.substring(0, ot.length - 1);
                 }(a);
               n -= 1, a = a === void 0 ? 2 * n : a;
-              var o, l, h, y, x = S.getModuleCount() * n + 2 * a, g = a, k = x - a, D = Array(n + 1).join("██"), B = Array(n + 1).join("  "), T = "", O = "";
-              for (o = 0; o < x; o += 1) {
-                for (h = Math.floor((o - g) / n), O = "", l = 0; l < x; l += 1)
+              var o, l, h, y, _ = S.getModuleCount() * n + 2 * a, g = a, k = _ - a, D = Array(n + 1).join("██"), B = Array(n + 1).join("  "), T = "", O = "";
+              for (o = 0; o < _; o += 1) {
+                for (h = Math.floor((o - g) / n), O = "", l = 0; l < _; l += 1)
                   y = 1, g <= l && l < k && g <= o && o < k && S.isDark(h, Math.floor((l - g) / n)) && (y = 0), O += y ? D : B;
                 for (h = 0; h < n; h += 1)
                   T += O + `
@@ -253,22 +253,22 @@ var zt = { exports: {} };
                 if (t == -1)
                   throw "eof";
                 return t;
-              }, M = 0, _ = {}; ; ) {
+              }, M = 0, x = {}; ; ) {
                 var S = c.read();
                 if (S == -1)
                   break;
                 var W = b(), d = b() << 8 | b();
-                _[String.fromCharCode(S << 8 | W)] = d, M += 1;
+                x[String.fromCharCode(S << 8 | W)] = d, M += 1;
               }
               if (M != m)
                 throw M + " != " + m;
-              return _;
+              return x;
             }(), f = "?".charCodeAt(0);
             return function(c) {
               for (var b = [], M = 0; M < c.length; M += 1) {
-                var _ = c.charCodeAt(M);
-                if (_ < 128)
-                  b.push(_);
+                var x = c.charCodeAt(M);
+                if (x < 128)
+                  b.push(x);
                 else {
                   var S = v[c.charAt(M)];
                   typeof S == "number" ? (255 & S) == S ? b.push(S) : (b.push(S >>> 8), b.push(255 & S)) : b.push(f);
@@ -377,10 +377,10 @@ var zt = { exports: {} };
           }, $.getLostPoint = function(w) {
             for (var m = w.getModuleCount(), v = 0, f = 0; f < m; f += 1)
               for (var c = 0; c < m; c += 1) {
-                for (var b = 0, M = w.isDark(f, c), _ = -1; _ <= 1; _ += 1)
-                  if (!(f + _ < 0 || m <= f + _))
+                for (var b = 0, M = w.isDark(f, c), x = -1; x <= 1; x += 1)
+                  if (!(f + x < 0 || m <= f + x))
                     for (var S = -1; S <= 1; S += 1)
-                      c + S < 0 || m <= c + S || _ == 0 && S == 0 || M == w.isDark(f + _, c + S) && (b += 1);
+                      c + S < 0 || m <= c + S || x == 0 && S == 0 || M == w.isDark(f + x, c + S) && (b += 1);
                 b > 5 && (v += 3 + b - 5);
               }
             for (f = 0; f < m - 1; f += 1)
@@ -433,16 +433,16 @@ var zt = { exports: {} };
               return v.length;
             }, multiply: function(c) {
               for (var b = new Array(f.getLength() + c.getLength() - 1), M = 0; M < f.getLength(); M += 1)
-                for (var _ = 0; _ < c.getLength(); _ += 1)
-                  b[M + _] ^= st.gexp(st.glog(f.getAt(M)) + st.glog(c.getAt(_)));
+                for (var x = 0; x < c.getLength(); x += 1)
+                  b[M + x] ^= st.gexp(st.glog(f.getAt(M)) + st.glog(c.getAt(x)));
               return at(b, 0);
             }, mod: function(c) {
               if (f.getLength() - c.getLength() < 0)
                 return f;
-              for (var b = st.glog(f.getAt(0)) - st.glog(c.getAt(0)), M = new Array(f.getLength()), _ = 0; _ < f.getLength(); _ += 1)
-                M[_] = f.getAt(_);
-              for (_ = 0; _ < c.getLength(); _ += 1)
-                M[_] ^= st.gexp(st.glog(c.getAt(_)) + b);
+              for (var b = st.glog(f.getAt(0)) - st.glog(c.getAt(0)), M = new Array(f.getLength()), x = 0; x < f.getLength(); x += 1)
+                M[x] = f.getAt(x);
+              for (x = 0; x < c.getLength(); x += 1)
+                M[x] ^= st.gexp(st.glog(c.getAt(x)) + b);
               return at(M, 0).mod(c);
             } };
             return f;
@@ -468,10 +468,10 @@ var zt = { exports: {} };
               }(f, c);
               if (b === void 0)
                 throw "bad rs block @ typeNumber:" + f + "/errorCorrectionLevel:" + c;
-              for (var M = b.length / 3, _ = [], S = 0; S < M; S += 1)
+              for (var M = b.length / 3, x = [], S = 0; S < M; S += 1)
                 for (var W = b[3 * S + 0], d = b[3 * S + 1], t = b[3 * S + 2], r = 0; r < W; r += 1)
-                  _.push(m(d, t));
-              return _;
+                  x.push(m(d, t));
+              return x;
             } };
             return v;
           }(), dt = function() {
@@ -496,12 +496,12 @@ var zt = { exports: {} };
             }, getLength: function(b) {
               return m.length;
             }, write: function(b) {
-              for (var M = m, _ = 0; _ + 2 < M.length; )
-                b.put(f(M.substring(_, _ + 3)), 10), _ += 3;
-              _ < M.length && (M.length - _ == 1 ? b.put(f(M.substring(_, _ + 1)), 4) : M.length - _ == 2 && b.put(f(M.substring(_, _ + 2)), 7));
+              for (var M = m, x = 0; x + 2 < M.length; )
+                b.put(f(M.substring(x, x + 3)), 10), x += 3;
+              x < M.length && (M.length - x == 1 ? b.put(f(M.substring(x, x + 1)), 4) : M.length - x == 2 && b.put(f(M.substring(x, x + 2)), 7));
             } }, f = function(b) {
-              for (var M = 0, _ = 0; _ < b.length; _ += 1)
-                M = 10 * M + c(b.charAt(_));
+              for (var M = 0, x = 0; x < b.length; x += 1)
+                M = 10 * M + c(b.charAt(x));
               return M;
             }, c = function(b) {
               if ("0" <= b && b <= "9")
@@ -509,7 +509,7 @@ var zt = { exports: {} };
               throw "illegal char :" + b;
             };
             return v;
-          }, _t = function(w) {
+          }, xt = function(w) {
             var m = w, v = { getMode: function() {
               return 2;
             }, getLength: function(c) {
@@ -586,7 +586,7 @@ var zt = { exports: {} };
               if (b < c.length)
                 throw "illegal char at " + (b + 1);
             } };
-          }, xt = function() {
+          }, _t = function() {
             var w = [], m = { writeByte: function(v) {
               w.push(255 & v);
             }, writeShort: function(v) {
@@ -616,25 +616,25 @@ var zt = { exports: {} };
                     return -1;
                   throw "unexpected end of file./" + c;
                 }
-                var _ = m.charAt(v);
-                if (v += 1, _ == "=")
+                var x = m.charAt(v);
+                if (v += 1, x == "=")
                   return c = 0, -1;
-                _.match(/^\s$/) || (f = f << 6 | M(_.charCodeAt(0)), c += 6);
+                x.match(/^\s$/) || (f = f << 6 | M(x.charCodeAt(0)), c += 6);
               }
               var S = f >>> c - 8 & 255;
               return c -= 8, S;
-            } }, M = function(_) {
-              if (65 <= _ && _ <= 90)
-                return _ - 65;
-              if (97 <= _ && _ <= 122)
-                return _ - 97 + 26;
-              if (48 <= _ && _ <= 57)
-                return _ - 48 + 52;
-              if (_ == 43)
+            } }, M = function(x) {
+              if (65 <= x && x <= 90)
+                return x - 65;
+              if (97 <= x && x <= 122)
+                return x - 97 + 26;
+              if (48 <= x && x <= 57)
+                return x - 48 + 52;
+              if (x == 43)
                 return 62;
-              if (_ == 47)
+              if (x == 47)
                 return 63;
-              throw "c:" + _;
+              throw "c:" + x;
             };
             return b;
           }, Ct = function(w, m, v) {
@@ -652,14 +652,14 @@ var zt = { exports: {} };
                 for (var a = 1 << n, o = 1 + (1 << n), l = n + 1, h = p(), y = 0; y < a; y += 1)
                   h.add(String.fromCharCode(y));
                 h.add(String.fromCharCode(a)), h.add(String.fromCharCode(o));
-                var x, g, k, D = xt(), B = (x = D, g = 0, k = 0, { write: function(q, L) {
+                var _, g, k, D = _t(), B = (_ = D, g = 0, k = 0, { write: function(q, L) {
                   if (q >>> L)
                     throw "length over";
                   for (; g + L >= 8; )
-                    x.writeByte(255 & (q << g | k)), L -= 8 - g, q >>>= 8 - g, k = 0, g = 0;
+                    _.writeByte(255 & (q << g | k)), L -= 8 - g, q >>>= 8 - g, k = 0, g = 0;
                   k |= q << g, g += L;
                 }, flush: function() {
-                  g > 0 && x.writeByte(k);
+                  g > 0 && _.writeByte(k);
                 } });
                 B.write(a, l);
                 var T = 0, O = String.fromCharCode(i[T]);
@@ -686,9 +686,9 @@ var zt = { exports: {} };
             }(w, m), c = 0; c < m; c += 1)
               for (var b = 0; b < w; b += 1)
                 f.setPixel(b, c, v(b, c));
-            var M = xt();
+            var M = _t();
             f.write(M);
-            for (var _ = function() {
+            for (var x = function() {
               var d = 0, t = 0, r = 0, e = "", i = {}, u = function(p) {
                 e += String.fromCharCode(s(63 & p));
               }, s = function(p) {
@@ -717,8 +717,8 @@ var zt = { exports: {} };
                 return e;
               }, i;
             }(), S = M.toByteArray(), W = 0; W < S.length; W += 1)
-              _.writeByte(S[W]);
-            return _.flush(), "data:image/gif;base64," + _;
+              x.writeByte(S[W]);
+            return x.flush(), "data:image/gif;base64," + x;
           };
           return U;
         }();
@@ -780,7 +780,7 @@ var zt = { exports: {} };
                 return this;
               }), o;
               function h(y) {
-                return function(x) {
+                return function(_) {
                   return function(g) {
                     if (p)
                       throw new TypeError("Generator is already executing.");
@@ -830,7 +830,7 @@ var zt = { exports: {} };
                     if (5 & g[0])
                       throw g[1];
                     return { value: g[0] ? g[1] : void 0, done: !0 };
-                  }([y, x]);
+                  }([y, _]);
                 };
               }
             }(this, function(u) {
@@ -1108,7 +1108,7 @@ var zt = { exports: {} };
             }
             n((e = e.apply(d, t || [])).next());
           });
-        }, _t = function(d, t) {
+        }, xt = function(d, t) {
           var r, e, i, u, s = { label: 0, sent: function() {
             if (1 & i[0])
               throw i[1];
@@ -1172,7 +1172,7 @@ var zt = { exports: {} };
             };
           }
         }, lt = [[1, 1, 1, 1, 1, 1, 1], [1, 0, 0, 0, 0, 0, 1], [1, 0, 0, 0, 0, 0, 1], [1, 0, 0, 0, 0, 0, 1], [1, 0, 0, 0, 0, 0, 1], [1, 0, 0, 0, 0, 0, 1], [1, 1, 1, 1, 1, 1, 1]], ct = [[0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0], [0, 0, 1, 1, 1, 0, 0], [0, 0, 1, 1, 1, 0, 0], [0, 0, 1, 1, 1, 0, 0], [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0]];
-        const xt = function() {
+        const _t = function() {
           function d(t) {
             this._element = document.createElementNS("http://www.w3.org/2000/svg", "svg"), this._element.setAttribute("width", String(t.width)), this._element.setAttribute("height", String(t.height)), this._defs = document.createElementNS("http://www.w3.org/2000/svg", "defs"), this._element.appendChild(this._defs), this._options = t;
           }
@@ -1185,24 +1185,24 @@ var zt = { exports: {} };
           }, d.prototype.drawQR = function(t) {
             return yt(this, void 0, void 0, function() {
               var r, e, i, u, s, p, n, a, o, l, h = this;
-              return _t(this, function(y) {
+              return xt(this, function(y) {
                 switch (y.label) {
                   case 0:
                     return r = t.getModuleCount(), e = Math.min(this._options.width, this._options.height) - 2 * this._options.margin, i = this._options.shape === dt ? e / Math.sqrt(2) : e, u = Math.floor(i / r), s = { hideXDots: 0, hideYDots: 0, width: 0, height: 0 }, this._qr = t, this._options.image ? [4, this.loadImage()] : [3, 2];
                   case 1:
                     if (y.sent(), !this._image)
                       return [2];
-                    p = this._options, n = p.imageOptions, a = p.qrOptions, o = n.imageSize * $[a.errorCorrectionLevel], l = Math.floor(o * r * r), s = function(x) {
-                      var g = x.originalHeight, k = x.originalWidth, D = x.maxHiddenDots, B = x.maxHiddenAxisDots, T = x.dotSize, O = { x: 0, y: 0 }, R = { x: 0, y: 0 };
+                    p = this._options, n = p.imageOptions, a = p.qrOptions, o = n.imageSize * $[a.errorCorrectionLevel], l = Math.floor(o * r * r), s = function(_) {
+                      var g = _.originalHeight, k = _.originalWidth, D = _.maxHiddenDots, B = _.maxHiddenAxisDots, T = _.dotSize, O = { x: 0, y: 0 }, R = { x: 0, y: 0 };
                       if (g <= 0 || k <= 0 || D <= 0 || T <= 0)
                         return { height: 0, width: 0, hideYDots: 0, hideXDots: 0 };
                       var q = g / k;
                       return O.x = Math.floor(Math.sqrt(D / q)), O.x <= 0 && (O.x = 1), B && B < O.x && (O.x = B), O.x % 2 == 0 && O.x--, R.x = O.x * T, O.y = 1 + 2 * Math.ceil((O.x * q - 1) / 2), R.y = Math.round(R.x * q), (O.y * O.x > D || B && B < O.y) && (B && B < O.y ? (O.y = B, O.y % 2 == 0 && O.x--) : O.y -= 2, R.y = O.y * T, O.x = 1 + 2 * Math.ceil((O.y / q - 1) / 2), R.x = Math.round(R.y / q)), { height: R.y, width: R.x, hideYDots: O.y, hideXDots: O.x };
                     }({ originalWidth: this._image.width, originalHeight: this._image.height, maxHiddenDots: l, maxHiddenAxisDots: r - 14, dotSize: u }), y.label = 2;
                   case 2:
-                    return this.drawBackground(), this.drawDots(function(x, g) {
+                    return this.drawBackground(), this.drawDots(function(_, g) {
                       var k, D, B, T, O, R;
-                      return !(h._options.imageOptions.hideBackgroundDots && x >= (r - s.hideXDots) / 2 && x < (r + s.hideXDots) / 2 && g >= (r - s.hideYDots) / 2 && g < (r + s.hideYDots) / 2 || !((k = lt[x]) === null || k === void 0) && k[g] || !((D = lt[x - r + 7]) === null || D === void 0) && D[g] || !((B = lt[x]) === null || B === void 0) && B[g - r + 7] || !((T = ct[x]) === null || T === void 0) && T[g] || !((O = ct[x - r + 7]) === null || O === void 0) && O[g] || !((R = ct[x]) === null || R === void 0) && R[g - r + 7]);
+                      return !(h._options.imageOptions.hideBackgroundDots && _ >= (r - s.hideXDots) / 2 && _ < (r + s.hideXDots) / 2 && g >= (r - s.hideYDots) / 2 && g < (r + s.hideYDots) / 2 || !((k = lt[_]) === null || k === void 0) && k[g] || !((D = lt[_ - r + 7]) === null || D === void 0) && D[g] || !((B = lt[_]) === null || B === void 0) && B[g - r + 7] || !((T = ct[_]) === null || T === void 0) && T[g] || !((O = ct[_ - r + 7]) === null || O === void 0) && O[g] || !((R = ct[_]) === null || R === void 0) && R[g - r + 7]);
                     }), this.drawCorners(), this._options.image ? [4, this.drawImage({ width: s.width, height: s.height, count: r, dotSize: u })] : [3, 4];
                   case 3:
                     y.sent(), y.label = 4;
@@ -1231,12 +1231,12 @@ var zt = { exports: {} };
             this._dotsClipPath = document.createElementNS("http://www.w3.org/2000/svg", "clipPath"), this._dotsClipPath.setAttribute("id", "clip-path-dot-color"), this._defs.appendChild(this._dotsClipPath), this._createColor({ options: (r = u.dotsOptions) === null || r === void 0 ? void 0 : r.gradient, color: u.dotsOptions.color, additionalRotation: 0, x: 0, y: 0, height: u.height, width: u.width, name: "dot-color" });
             for (var y = function(G) {
               for (var N = function(F) {
-                return t && !t(G, F) ? "continue" : !((e = x._qr) === null || e === void 0) && e.isDark(G, F) ? (h.draw(o + G * a, l + F * a, a, function(Y, J) {
+                return t && !t(G, F) ? "continue" : !((e = _._qr) === null || e === void 0) && e.isDark(G, F) ? (h.draw(o + G * a, l + F * a, a, function(Y, J) {
                   return !(G + Y < 0 || F + J < 0 || G + Y >= s || F + J >= s) && !(t && !t(G + Y, F + J)) && !!i._qr && i._qr.isDark(G + Y, F + J);
-                }), void (h._element && x._dotsClipPath && x._dotsClipPath.appendChild(h._element))) : "continue";
+                }), void (h._element && _._dotsClipPath && _._dotsClipPath.appendChild(h._element))) : "continue";
               }, X = 0; X < s; X++)
                 N(X);
-            }, x = this, g = 0; g < s; g++)
+            }, _ = this, g = 0; g < s; g++)
               y(g);
             if (u.shape === dt) {
               var k = Math.floor((p / a - s) / 2), D = s + 2 * k, B = o - k * a, T = l - k * a, O = [], R = Math.floor(D / 2);
@@ -1268,8 +1268,8 @@ var zt = { exports: {} };
               throw "Element code is not defined";
             var i = this._qr.getModuleCount(), u = Math.min(e.width, e.height) - 2 * e.margin, s = e.shape === dt ? u / Math.sqrt(2) : u, p = Math.floor(s / i), n = 7 * p, a = 3 * p, o = Math.floor((e.width - i * p) / 2), l = Math.floor((e.height - i * p) / 2);
             [[0, 0, 0], [1, 0, Math.PI / 2], [0, 1, -Math.PI / 2]].forEach(function(h) {
-              var y, x, g, k, D, B, T, O, R, q, L, nt, G = h[0], N = h[1], X = h[2], F = o + G * p * (i - 7), Y = l + N * p * (i - 7), J = t._dotsClipPath, K = t._dotsClipPath;
-              if ((!((y = e.cornersSquareOptions) === null || y === void 0) && y.gradient || !((x = e.cornersSquareOptions) === null || x === void 0) && x.color) && ((J = document.createElementNS("http://www.w3.org/2000/svg", "clipPath")).setAttribute("id", "clip-path-corners-square-color-" + G + "-" + N), t._defs.appendChild(J), t._cornersSquareClipPath = t._cornersDotClipPath = K = J, t._createColor({ options: (g = e.cornersSquareOptions) === null || g === void 0 ? void 0 : g.gradient, color: (k = e.cornersSquareOptions) === null || k === void 0 ? void 0 : k.color, additionalRotation: X, x: F, y: Y, height: n, width: n, name: "corners-square-color-" + G + "-" + N })), (D = e.cornersSquareOptions) === null || D === void 0 ? void 0 : D.type) {
+              var y, _, g, k, D, B, T, O, R, q, L, nt, G = h[0], N = h[1], X = h[2], F = o + G * p * (i - 7), Y = l + N * p * (i - 7), J = t._dotsClipPath, K = t._dotsClipPath;
+              if ((!((y = e.cornersSquareOptions) === null || y === void 0) && y.gradient || !((_ = e.cornersSquareOptions) === null || _ === void 0) && _.color) && ((J = document.createElementNS("http://www.w3.org/2000/svg", "clipPath")).setAttribute("id", "clip-path-corners-square-color-" + G + "-" + N), t._defs.appendChild(J), t._cornersSquareClipPath = t._cornersDotClipPath = K = J, t._createColor({ options: (g = e.cornersSquareOptions) === null || g === void 0 ? void 0 : g.gradient, color: (k = e.cornersSquareOptions) === null || k === void 0 ? void 0 : k.color, additionalRotation: X, x: F, y: Y, height: n, width: n, name: "corners-square-color-" + G + "-" + N })), (D = e.cornersSquareOptions) === null || D === void 0 ? void 0 : D.type) {
                 var ot = new st({ svg: t._element, type: e.cornersSquareOptions.type });
                 ot.draw(F, Y, n, X), ot._element && J && J.appendChild(ot._element);
               } else
@@ -1318,13 +1318,13 @@ var zt = { exports: {} };
           }, d.prototype.drawImage = function(t) {
             var r = t.width, e = t.height, i = t.count, u = t.dotSize;
             return yt(this, void 0, void 0, function() {
-              var s, p, n, a, o, l, h, y, x;
-              return _t(this, function(g) {
+              var s, p, n, a, o, l, h, y, _;
+              return xt(this, function(g) {
                 switch (g.label) {
                   case 0:
                     return s = this._options, p = Math.floor((s.width - i * u) / 2), n = Math.floor((s.height - i * u) / 2), a = p + s.imageOptions.margin + (i * u - r) / 2, o = n + s.imageOptions.margin + (i * u - e) / 2, l = r - 2 * s.imageOptions.margin, h = e - 2 * s.imageOptions.margin, (y = document.createElementNS("http://www.w3.org/2000/svg", "image")).setAttribute("x", String(a)), y.setAttribute("y", String(o)), y.setAttribute("width", l + "px"), y.setAttribute("height", h + "px"), [4, et(s.image || "")];
                   case 1:
-                    return x = g.sent(), y.setAttribute("href", x || ""), this._element.appendChild(y), [2];
+                    return _ = g.sent(), y.setAttribute("href", _ || ""), this._element.appendChild(y), [2];
                 }
               });
             });
@@ -1335,8 +1335,8 @@ var zt = { exports: {} };
               if (r.type === "radial")
                 (h = document.createElementNS("http://www.w3.org/2000/svg", "radialGradient")).setAttribute("id", a), h.setAttribute("gradientUnits", "userSpaceOnUse"), h.setAttribute("fx", String(u + n / 2)), h.setAttribute("fy", String(s + p / 2)), h.setAttribute("cx", String(u + n / 2)), h.setAttribute("cy", String(s + p / 2)), h.setAttribute("r", String(o / 2));
               else {
-                var y = ((r.rotation || 0) + i) % (2 * Math.PI), x = (y + 2 * Math.PI) % (2 * Math.PI), g = u + n / 2, k = s + p / 2, D = u + n / 2, B = s + p / 2;
-                x >= 0 && x <= 0.25 * Math.PI || x > 1.75 * Math.PI && x <= 2 * Math.PI ? (g -= n / 2, k -= p / 2 * Math.tan(y), D += n / 2, B += p / 2 * Math.tan(y)) : x > 0.25 * Math.PI && x <= 0.75 * Math.PI ? (k -= p / 2, g -= n / 2 / Math.tan(y), B += p / 2, D += n / 2 / Math.tan(y)) : x > 0.75 * Math.PI && x <= 1.25 * Math.PI ? (g += n / 2, k += p / 2 * Math.tan(y), D -= n / 2, B -= p / 2 * Math.tan(y)) : x > 1.25 * Math.PI && x <= 1.75 * Math.PI && (k += p / 2, g += n / 2 / Math.tan(y), B -= p / 2, D -= n / 2 / Math.tan(y)), (h = document.createElementNS("http://www.w3.org/2000/svg", "linearGradient")).setAttribute("id", a), h.setAttribute("gradientUnits", "userSpaceOnUse"), h.setAttribute("x1", String(Math.round(g))), h.setAttribute("y1", String(Math.round(k))), h.setAttribute("x2", String(Math.round(D))), h.setAttribute("y2", String(Math.round(B)));
+                var y = ((r.rotation || 0) + i) % (2 * Math.PI), _ = (y + 2 * Math.PI) % (2 * Math.PI), g = u + n / 2, k = s + p / 2, D = u + n / 2, B = s + p / 2;
+                _ >= 0 && _ <= 0.25 * Math.PI || _ > 1.75 * Math.PI && _ <= 2 * Math.PI ? (g -= n / 2, k -= p / 2 * Math.tan(y), D += n / 2, B += p / 2 * Math.tan(y)) : _ > 0.25 * Math.PI && _ <= 0.75 * Math.PI ? (k -= p / 2, g -= n / 2 / Math.tan(y), B += p / 2, D += n / 2 / Math.tan(y)) : _ > 0.75 * Math.PI && _ <= 1.25 * Math.PI ? (g += n / 2, k += p / 2 * Math.tan(y), D -= n / 2, B -= p / 2 * Math.tan(y)) : _ > 1.25 * Math.PI && _ <= 1.75 * Math.PI && (k += p / 2, g += n / 2 / Math.tan(y), B -= p / 2, D -= n / 2 / Math.tan(y)), (h = document.createElementNS("http://www.w3.org/2000/svg", "linearGradient")).setAttribute("id", a), h.setAttribute("gradientUnits", "userSpaceOnUse"), h.setAttribute("x1", String(Math.round(g))), h.setAttribute("y1", String(Math.round(k))), h.setAttribute("x2", String(Math.round(D))), h.setAttribute("y2", String(Math.round(B)));
               }
               r.colorStops.forEach(function(T) {
                 var O = T.offset, R = T.color, q = document.createElementNS("http://www.w3.org/2000/svg", "stop");
@@ -1370,7 +1370,7 @@ var zt = { exports: {} };
           var t = v({}, d);
           return t.width = Number(t.width), t.height = Number(t.height), t.margin = Number(t.margin), t.imageOptions = v(v({}, t.imageOptions), { hideBackgroundDots: !!t.imageOptions.hideBackgroundDots, imageSize: Number(t.imageOptions.imageSize), margin: Number(t.imageOptions.margin) }), t.margin > Math.min(t.width, t.height) && (t.margin = Math.min(t.width, t.height)), t.dotsOptions = v({}, t.dotsOptions), t.dotsOptions.gradient && (t.dotsOptions.gradient = f(t.dotsOptions.gradient)), t.cornersSquareOptions && (t.cornersSquareOptions = v({}, t.cornersSquareOptions), t.cornersSquareOptions.gradient && (t.cornersSquareOptions.gradient = f(t.cornersSquareOptions.gradient))), t.cornersDotOptions && (t.cornersDotOptions = v({}, t.cornersDotOptions), t.cornersDotOptions.gradient && (t.cornersDotOptions.gradient = f(t.cornersDotOptions.gradient))), t.backgroundOptions && (t.backgroundOptions = v({}, t.backgroundOptions), t.backgroundOptions.gradient && (t.backgroundOptions.gradient = f(t.backgroundOptions.gradient))), t;
         }
-        var b = Q(192), M = Q.n(b), _ = function(d, t, r, e) {
+        var b = Q(192), M = Q.n(b), x = function(d, t, r, e) {
           return new (r || (r = Promise))(function(i, u) {
             function s(a) {
               try {
@@ -1467,7 +1467,7 @@ var zt = { exports: {} };
           }, d.prototype._setupSvg = function() {
             var t = this;
             if (this._qr) {
-              var r = new xt(this._options);
+              var r = new _t(this._options);
               this._svg = r.getElement(), this._svgDrawingPromise = r.drawQR(this._qr).then(function() {
                 var e;
                 t._svg && ((e = t._extension) === null || e === void 0 || e.call(t, r.getElement(), t._options));
@@ -1487,7 +1487,7 @@ var zt = { exports: {} };
               }
             }));
           }, d.prototype._getElement = function(t) {
-            return t === void 0 && (t = "png"), _(this, void 0, void 0, function() {
+            return t === void 0 && (t = "png"), x(this, void 0, void 0, function() {
               return S(this, function(r) {
                 switch (r.label) {
                   case 0:
@@ -1527,7 +1527,7 @@ var zt = { exports: {} };
           }, d.prototype.deleteExtension = function() {
             this._extension = void 0, this.update();
           }, d.prototype.getRawData = function(t) {
-            return t === void 0 && (t = "png"), _(this, void 0, void 0, function() {
+            return t === void 0 && (t = "png"), x(this, void 0, void 0, function() {
               var r, e, i;
               return S(this, function(u) {
                 switch (u.label) {
@@ -1544,7 +1544,7 @@ var zt = { exports: {} };
               });
             });
           }, d.prototype.download = function(t) {
-            return _(this, void 0, void 0, function() {
+            return x(this, void 0, void 0, function() {
               var r, e, i, u, s;
               return S(this, function(p) {
                 switch (p.label) {
@@ -1578,7 +1578,7 @@ var zt = { exports: {} };
   });
 })(zt);
 var Nt = zt.exports;
-const jt = /* @__PURE__ */ Lt(Nt), Tt = `[popover]{position:fixed;z-index:2147483647;top:0;right:0;bottom:0;left:0;padding:.25em;width:-webkit-fit-content;width:-moz-fit-content;width:fit-content;height:-webkit-fit-content;height:-moz-fit-content;height:fit-content;border-width:medium;border-width:initial;border-color:currentColor;border-color:initial;-o-border-image:none;border-image:none;-o-border-image:initial;border-image:initial;border-style:solid;background-color:canvas;color:canvastext;overflow:auto;margin:auto}[popover]:not(.\\:popover-open){display:none}dialog[popover][open]{display:revert}[anchor].\\:popover-open{top:auto;right:auto;bottom:auto;left:auto}@supports selector([popover]:open){[popover]:not(.\\:popover-open):not(dialog[open]){display:revert}[anchor]:open{top:auto;right:auto;bottom:auto;left:auto}}@supports selector([popover]:popover-open){[popover]:not(.\\:popover-open):not(dialog[open]){display:revert}[anchor]:popover-open{top:auto;right:auto;bottom:auto;left:auto}}@supports not (background-color: canvas){[popover]{background-color:#fff;color:#000}}@supports (width: -moz-fit-content){[popover]{width:-moz-fit-content;height:-moz-fit-content}}@supports not (inset: 0){[popover]{top:0;left:0;right:0;bottom:0}}.root>div{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;margin:auto;-webkit-box-align:center;-ms-flex-align:center;align-items:center;height:100vh;width:100vw}.root>div>div{margin:auto;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;text-align:center;width:calc(100% - 2em);max-width:calc(350px + 1em);-webkit-box-flex:1;-ms-flex:1;flex:1}label{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}button,input[type=url]{padding:5px;margin-bottom:2em;width:calc(100% - 1em);white-space:nowrap}button{margin-top:2em}#QRContainer canvas{width:300px;margin-bottom:2em}#ThemePopover{position:fixed;margin:0;width:120px;top:40px}p-top-nav{position:fixed}p-top-nav-item button{border:0;-webkit-appearance:none;-moz-appearance:none;appearance:none;background:transparent;font:inherit;margin:0;outline:none}
+const jt = /* @__PURE__ */ Lt(Nt), Tt = `[popover]{position:fixed;z-index:2147483647;top:0;right:0;bottom:0;left:0;padding:.25em;width:-webkit-fit-content;width:-moz-fit-content;width:fit-content;height:-webkit-fit-content;height:-moz-fit-content;height:fit-content;border-width:medium;border-width:initial;border-color:currentColor;border-color:initial;-o-border-image:none;border-image:none;-o-border-image:initial;border-image:initial;border-style:solid;background-color:canvas;color:canvastext;overflow:auto;margin:auto}[popover]:not(.\\:popover-open){display:none}dialog[popover][open]{display:revert}[anchor].\\:popover-open{top:auto;right:auto;bottom:auto;left:auto}@supports selector([popover]:open){[popover]:not(.\\:popover-open):not(dialog[open]){display:revert}[anchor]:open{top:auto;right:auto;bottom:auto;left:auto}}@supports selector([popover]:popover-open){[popover]:not(.\\:popover-open):not(dialog[open]){display:revert}[anchor]:popover-open{top:auto;right:auto;bottom:auto;left:auto}}@supports not (background-color: canvas){[popover]{background-color:#fff;color:#000}}@supports (width: -moz-fit-content){[popover]{width:-moz-fit-content;height:-moz-fit-content}}@supports not (inset: 0){[popover]{top:0;left:0;right:0;bottom:0}}.root>div{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;margin:auto;-webkit-box-align:center;-ms-flex-align:center;align-items:center;height:100vh;width:100vw}.root>div>div{margin:auto;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;text-align:center;width:calc(100% - 2em);max-width:calc(350px + 1em);-webkit-box-flex:1;-ms-flex:1;flex:1}label{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}button,input[type=url]{padding:5px;margin-bottom:2em;width:calc(100% - 1em);white-space:nowrap}button{margin-top:2em}#QRContainer canvas{width:300px;margin-bottom:2em}#ThemePopover{position:fixed;background-color:#fff;margin:0;width:120px;top:40px;border:0;border-radius:0;border-radius:var(--dialog-border-radius, 0);-webkit-box-shadow:2px 2px 5px hsla(220,3%,23%,.3);box-shadow:2px 2px 5px #393a3c4d;-webkit-box-shadow:var(--dialog-box-shadow, 2px 2px 5px hsla(220, 3%, 23%, .3));box-shadow:var(--dialog-box-shadow, 2px 2px 5px hsla(220, 3%, 23%, .3))}p-top-nav{position:fixed}p-top-nav-item button{border:0;-webkit-appearance:none;-moz-appearance:none;appearance:none;background:transparent;font:inherit;margin:0;outline:none;cursor:pointer}
 `;
 class Ft {
   async getThemes() {
@@ -1818,7 +1818,7 @@ qt = Zt([
     tagName: "p-top-nav"
   })
 ], qt);
-const Vt = `:host{font-weight:400}
+const Vt = `:host{font-weight:400;cursor:pointer}
 `;
 var te = Object.defineProperty, ee = Object.getOwnPropertyDescriptor, re = (E, z, j, I) => {
   for (var A = I > 1 ? void 0 : I ? ee(z, j) : z, C = E.length - 1, P; C >= 0; C--)
