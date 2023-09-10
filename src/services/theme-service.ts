@@ -1,7 +1,3 @@
-// https://raw.githubusercontent.com/p-huisman/pwa-qr-code-generator/master/README.md
-
-// https://api.github.com/repos/p-huisman/pwa-qr-code-generator/contents?ref=gh-pages
-
 interface GithubContentsItem {
   name: string;
 }

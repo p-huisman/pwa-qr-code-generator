@@ -54,6 +54,17 @@ export class PQrCodeGeneratorElement extends CustomElement {
       : null;
   }
 
+  private set theme(value: string) {
+    if (!this.themes.find(t => t.name === value)) {
+      return;
+    }
+    const theme = this.themes.find(t => t.name === value);
+    if (this.qrCode) {
+      this.qrCode.update(theme.options);
+    }
+    this.url = theme.url;
+  }
+
   private render = () => {
     return (
       <div>
@@ -95,7 +106,6 @@ export class PQrCodeGeneratorElement extends CustomElement {
   private onMenuItemClick = async ({ target }) => {
     switch (target.id) {
       case "ThemeMenuItem":
-        // console.log(await this.themeService.getThemes());
         this.themePopover?.togglePopover();
         break;
       case "AboutMenuItem":
@@ -105,7 +115,8 @@ export class PQrCodeGeneratorElement extends CustomElement {
   };
 
   private onSelectTheme = async ({ target }) => {
-    console.log(target.dataset.name, "!!");
+    this.theme = target.dataset.name;
+    this.themePopover?.togglePopover();
   };
 
   private openAboutDialog = async () => {
