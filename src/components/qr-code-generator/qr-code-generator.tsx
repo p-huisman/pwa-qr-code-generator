@@ -56,10 +56,11 @@ export class PQrCodeGeneratorElement extends CustomElement {
       return;
     }
     const theme = this.themes.find(t => t.name === value);
+    this.url = theme.url;
     if (this.qrCode) {
       this.qrCode.update(theme.options);
+      this.qrCode.update({ data: this.url });
     }
-    this.url = theme.url;
   }
 
   private render = () => {
