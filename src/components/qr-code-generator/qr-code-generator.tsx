@@ -10,21 +10,8 @@ import { PDialogElement } from "../dialog/dialog";
   tagName: "p-qr-code-generator",
 })
 export class PQrCodeGeneratorElement extends CustomElement {
-  constructor(
-    private defaultStyling: Options,
-    private qrCode?: QRCodeStyling
-  ) {
+  constructor(private qrCode?: QRCodeStyling) {
     super();
-    this.themeService = new ThemeService();
-    this.defaultStyling = {
-      width: 1200,
-      height: 1200,
-      data: this.url,
-      qrOptions: {
-        mode: "Byte",
-        errorCorrectionLevel: "H",
-      },
-    };
     const template = this.templateFromString(
       `<style>${css}</style><div class="root"></div>`
     );
@@ -37,6 +24,16 @@ export class PQrCodeGeneratorElement extends CustomElement {
     this.initThemes();
   }
 
+  private defaultStyling: Options = {
+    width: 1200,
+    height: 1200,
+    data: "about:blank",
+    qrOptions: {
+      mode: "Byte",
+      errorCorrectionLevel: "H",
+    },
+  };
+
   @RenderOnSet
   private themes: any[] = [];
 
@@ -44,7 +41,7 @@ export class PQrCodeGeneratorElement extends CustomElement {
     this.themes = await this.themeService.getThemes();
   }
 
-  private themeService: ThemeService;
+  private themeService: ThemeService = new ThemeService();
 
   private url: string = "about:blank";
 
@@ -70,7 +67,7 @@ export class PQrCodeGeneratorElement extends CustomElement {
       <div>
         <p-top-nav>
           <p-top-nav-item id="ThemeMenuItem" onclick={this.onMenuItemClick}>
-            Theme
+            Stijl
             <div id="ThemePopover" popover="auto">
               {this.themes.map(t => (
                 <button
@@ -83,7 +80,6 @@ export class PQrCodeGeneratorElement extends CustomElement {
               ))}
             </div>
           </p-top-nav-item>
-
           <p-top-nav-item id="AboutMenuItem" onclick={this.onMenuItemClick}>
             Over
           </p-top-nav-item>

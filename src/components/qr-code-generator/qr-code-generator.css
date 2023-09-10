@@ -46,10 +46,14 @@ button {
 }
 
 #ThemePopover {
-  position: relative;
+  position: fixed;
   margin: 0;
   width: 120px;
   top: 40px;
+}
+
+p-top-nav{
+  position: fixed;
 }
 
 p-top-nav-item button {
