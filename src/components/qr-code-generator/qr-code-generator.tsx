@@ -94,7 +94,9 @@ export class PQrCodeGeneratorElement extends CustomElement {
             oninput={this.onDataChange}
           />
           <div id="QRContainer" afterCreate={this.onCreateQRElement}></div>
-          <button onclick={this.onDownloadButtonClick}>Download QR code</button>
+          <button class="primary-button" onclick={this.onDownloadButtonClick}>
+            Download QR code
+          </button>
         </div>
       </div>
     );
