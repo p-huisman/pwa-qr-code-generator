@@ -196,5 +196,5 @@ button:not(.primary-button):focus {
   border-radius: 0.4rem;
   border-radius: var(--border-radius-xs);
   padding: 0.8em 1.6em;
-  width: calc(100% - 3.8em)
+  width: calc(100% - 3.8em);
 }
