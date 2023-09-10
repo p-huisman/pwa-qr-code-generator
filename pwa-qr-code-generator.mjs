@@ -1666,7 +1666,7 @@ let Dt = class extends CustomElement {
     }, this.onDownloadButtonClick = async () => {
       var Q, it;
       let C = this.url;
-      this.url.indexOf("//") > 0 && (C = this.url.split("//")[1]), C = this.url.split("//")[1].replaceAll(":", "-").replaceAll("/", "-").replaceAll("?", "-").replaceAll(".", "-").replaceAll("/", "-");
+      this.url.indexOf("//") > 0 && (C = this.url.split("//")[1]), C = this.url.replaceAll(":", "-").replaceAll("/", "-").replaceAll("?", "-").replaceAll(".", "-").replaceAll("/", "-");
       const P = (it = (Q = this.qrCode) == null ? void 0 : Q._svg) == null ? void 0 : it.outerHTML;
       if (P) {
         const Z = P.replace(
