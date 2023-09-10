@@ -45,14 +45,14 @@ button {
   margin-bottom: 2em;
 }
 
-#ThemePopover{
+#ThemePopover {
   position: relative;
   margin: 0;
   width: 120px;
   top: 40px;
 }
 
-p-top-nav-item button{
+p-top-nav-item button {
   border: 0;
   appearance: none;
   background: transparent;
