@@ -1,4 +1,5 @@
 *
 
-bpf/*
-pfzw/*
+!.gitignore
+!bpf/*
+!pfzw/*
