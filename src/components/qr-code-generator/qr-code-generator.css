@@ -124,19 +124,8 @@ p-top-nav {
   position: fixed;
 }
 
-p-top-nav-item button {
-  border: 0;
-  appearance: none;
-  background: transparent;
-  font: inherit;
-  margin: 0;
-  outline: none;
-  cursor: pointer;
-}
 
-/* buttons */
-input[type="submit"],
-a[role="button"],
+
 button {
   background-color: var(--color-munsell-green);
   border: 1px solid transparent;
@@ -162,30 +151,31 @@ button {
   appearance: button;
 }
 
-input[type="submit"]:hover,
-input[type="submit"]:focus,
-a[role="button"]:hover,
-a[role="button"]:focus,
 button:hover,
 button:focus {
   background-color: var(--color-munsell-green-darker);
 }
 
-input[type="submit"]:not(.primary-button),
-a[role="button"]:not(.primary-button),
 button:not(.primary-button) {
   background-color: var(--color-white);
   color: var(--color-munsell-green);
 }
 
-input[type="submit"]:not(.primary-button):hover,
-input[type="submit"]:not(.primary-button):focus,
-a[role="button"]:not(.primary-button):hover,
-a[role="button"]:not(.primary-button):focus,
 button:not(.primary-button):hover,
 button:not(.primary-button):focus {
   background-color: var(--color-white);
   color: var(--color-munsell-green-darker);
+}
+
+p-top-nav-item button {
+  border: 0;
+  appearance: none;
+  background: transparent;
+  font: inherit;
+  margin: 0;
+  outline: none;
+  cursor: pointer;
+  padding: 0.5em;
 }
 
 #UrlInput {
