@@ -57,8 +57,7 @@
   --border-radius-default: 0.6rem;
   --border-radius-button: var(--border-radius-xs);
 
-  --ff-default: Roboto, -apple-system, BlinkMacSystemFont, "Helvetica Neue",
-    "Segoe UI", "Oxygen", "Ubuntu", "Cantarell", "Open Sans", sans-serif;
+  --ff-default: "Open Sans", sans-serif;
   --ff-body: var(--ff-default);
   --ff-headings: var(--ff-default);
   --default-fontsize: 1.6rem;
@@ -90,19 +89,9 @@
 }
 
 body {
-  font-family:
-    Roboto,
-    -apple-system,
-    BlinkMacSystemFont,
-    "Helvetica Neue",
-    "Segoe UI",
-    "Oxygen",
-    "Ubuntu",
-    "Cantarell",
-    "Open Sans",
-    sans-serif;
-  color: #0f0f0f;
-  background-color: #f6f6f6;
+  font-family: var(--ff-body);
+  color: var(--color-body);
+  background-color: var(--color-bg-body);
 }
 
 input[type="submit"],
