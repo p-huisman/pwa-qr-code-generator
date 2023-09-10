@@ -1,8 +1,8 @@
 function Lt(E) {
   return E && E.__esModule && Object.prototype.hasOwnProperty.call(E, "default") ? E.default : E;
 }
-var Bt = { exports: {} };
-(function(E, B) {
+var zt = { exports: {} };
+(function(E, z) {
   (function(T, I) {
     E.exports = I();
   })(self, function() {
@@ -10,66 +10,66 @@ var Bt = { exports: {} };
       var T = { 192: (C, P) => {
         var $, it, V = function() {
           var H = function(w, m) {
-            var v = w, f = ut[m], c = null, b = 0, M = null, _ = [], S = {}, W = function(o, a) {
-              c = function(n) {
-                for (var l = new Array(n), h = 0; h < n; h += 1) {
-                  l[h] = new Array(n);
-                  for (var y = 0; y < n; y += 1)
+            var v = w, f = ut[m], c = null, b = 0, M = null, _ = [], S = {}, W = function(n, a) {
+              c = function(o) {
+                for (var l = new Array(o), h = 0; h < o; h += 1) {
+                  l[h] = new Array(o);
+                  for (var y = 0; y < o; y += 1)
                     l[h][y] = null;
                 }
                 return l;
-              }(b = 4 * v + 17), d(0, 0), d(b - 7, 0), d(0, b - 7), r(), t(), i(o, a), v >= 7 && e(o), M == null && (M = s(v, f, _)), u(M, a);
-            }, d = function(o, a) {
-              for (var n = -1; n <= 7; n += 1)
-                if (!(o + n <= -1 || b <= o + n))
+              }(b = 4 * v + 17), d(0, 0), d(b - 7, 0), d(0, b - 7), r(), t(), i(n, a), v >= 7 && e(n), M == null && (M = s(v, f, _)), u(M, a);
+            }, d = function(n, a) {
+              for (var o = -1; o <= 7; o += 1)
+                if (!(n + o <= -1 || b <= n + o))
                   for (var l = -1; l <= 7; l += 1)
-                    a + l <= -1 || b <= a + l || (c[o + n][a + l] = 0 <= n && n <= 6 && (l == 0 || l == 6) || 0 <= l && l <= 6 && (n == 0 || n == 6) || 2 <= n && n <= 4 && 2 <= l && l <= 4);
+                    a + l <= -1 || b <= a + l || (c[n + o][a + l] = 0 <= o && o <= 6 && (l == 0 || l == 6) || 0 <= l && l <= 6 && (o == 0 || o == 6) || 2 <= o && o <= 4 && 2 <= l && l <= 4);
             }, t = function() {
-              for (var o = 8; o < b - 8; o += 1)
-                c[o][6] == null && (c[o][6] = o % 2 == 0);
+              for (var n = 8; n < b - 8; n += 1)
+                c[n][6] == null && (c[n][6] = n % 2 == 0);
               for (var a = 8; a < b - 8; a += 1)
                 c[6][a] == null && (c[6][a] = a % 2 == 0);
             }, r = function() {
-              for (var o = et.getPatternPosition(v), a = 0; a < o.length; a += 1)
-                for (var n = 0; n < o.length; n += 1) {
-                  var l = o[a], h = o[n];
+              for (var n = et.getPatternPosition(v), a = 0; a < n.length; a += 1)
+                for (var o = 0; o < n.length; o += 1) {
+                  var l = n[a], h = n[o];
                   if (c[l][h] == null)
                     for (var y = -2; y <= 2; y += 1)
                       for (var x = -2; x <= 2; x += 1)
                         c[l + y][h + x] = y == -2 || y == 2 || x == -2 || x == 2 || y == 0 && x == 0;
                 }
-            }, e = function(o) {
-              for (var a = et.getBCHTypeNumber(v), n = 0; n < 18; n += 1) {
-                var l = !o && (a >> n & 1) == 1;
-                c[Math.floor(n / 3)][n % 3 + b - 8 - 3] = l;
+            }, e = function(n) {
+              for (var a = et.getBCHTypeNumber(v), o = 0; o < 18; o += 1) {
+                var l = !n && (a >> o & 1) == 1;
+                c[Math.floor(o / 3)][o % 3 + b - 8 - 3] = l;
               }
-              for (n = 0; n < 18; n += 1)
-                l = !o && (a >> n & 1) == 1, c[n % 3 + b - 8 - 3][Math.floor(n / 3)] = l;
-            }, i = function(o, a) {
-              for (var n = f << 3 | a, l = et.getBCHTypeInfo(n), h = 0; h < 15; h += 1) {
-                var y = !o && (l >> h & 1) == 1;
+              for (o = 0; o < 18; o += 1)
+                l = !n && (a >> o & 1) == 1, c[o % 3 + b - 8 - 3][Math.floor(o / 3)] = l;
+            }, i = function(n, a) {
+              for (var o = f << 3 | a, l = et.getBCHTypeInfo(o), h = 0; h < 15; h += 1) {
+                var y = !n && (l >> h & 1) == 1;
                 h < 6 ? c[h][8] = y : h < 8 ? c[h + 1][8] = y : c[b - 15 + h][8] = y;
               }
               for (h = 0; h < 15; h += 1)
-                y = !o && (l >> h & 1) == 1, h < 8 ? c[8][b - h - 1] = y : h < 9 ? c[8][15 - h - 1 + 1] = y : c[8][15 - h - 1] = y;
-              c[b - 8][8] = !o;
-            }, u = function(o, a) {
-              for (var n = -1, l = b - 1, h = 7, y = 0, x = et.getMaskFunction(a), g = b - 1; g > 0; g -= 2)
+                y = !n && (l >> h & 1) == 1, h < 8 ? c[8][b - h - 1] = y : h < 9 ? c[8][15 - h - 1 + 1] = y : c[8][15 - h - 1] = y;
+              c[b - 8][8] = !n;
+            }, u = function(n, a) {
+              for (var o = -1, l = b - 1, h = 7, y = 0, x = et.getMaskFunction(a), g = b - 1; g > 0; g -= 2)
                 for (g == 6 && (g -= 1); ; ) {
                   for (var k = 0; k < 2; k += 1)
                     if (c[l][g - k] == null) {
                       var O = !1;
-                      y < o.length && (O = (o[y] >>> h & 1) == 1), x(l, g - k) && (O = !O), c[l][g - k] = O, (h -= 1) == -1 && (y += 1, h = 7);
+                      y < n.length && (O = (n[y] >>> h & 1) == 1), x(l, g - k) && (O = !O), c[l][g - k] = O, (h -= 1) == -1 && (y += 1, h = 7);
                     }
-                  if ((l += n) < 0 || b <= l) {
-                    l -= n, n = -n;
+                  if ((l += o) < 0 || b <= l) {
+                    l -= o, o = -o;
                     break;
                   }
                 }
-            }, s = function(o, a, n) {
-              for (var l = bt.getRSBlocks(o, a), h = dt(), y = 0; y < n.length; y += 1) {
-                var x = n[y];
-                h.put(x.getMode(), 4), h.put(x.getLength(), et.getLengthInBits(x.getMode(), o)), x.write(h);
+            }, s = function(n, a, o) {
+              for (var l = bt.getRSBlocks(n, a), h = dt(), y = 0; y < o.length; y += 1) {
+                var x = o[y];
+                h.put(x.getMode(), 4), h.put(x.getLength(), et.getLengthInBits(x.getMode(), n)), x.write(h);
               }
               var g = 0;
               for (y = 0; y < l.length; y += 1)
@@ -81,12 +81,12 @@ var Bt = { exports: {} };
               for (; !(h.getLengthInBits() >= 8 * g || (h.put(236, 8), h.getLengthInBits() >= 8 * g)); )
                 h.put(17, 8);
               return function(k, O) {
-                for (var z = 0, j = 0, D = 0, R = new Array(O.length), q = new Array(O.length), L = 0; L < O.length; L += 1) {
-                  var ot = O[L].dataCount, G = O[L].totalCount - ot;
-                  j = Math.max(j, ot), D = Math.max(D, G), R[L] = new Array(ot);
+                for (var B = 0, j = 0, D = 0, R = new Array(O.length), q = new Array(O.length), L = 0; L < O.length; L += 1) {
+                  var nt = O[L].dataCount, G = O[L].totalCount - nt;
+                  j = Math.max(j, nt), D = Math.max(D, G), R[L] = new Array(nt);
                   for (var N = 0; N < R[L].length; N += 1)
-                    R[L][N] = 255 & k.getBuffer()[N + z];
-                  z += ot;
+                    R[L][N] = 255 & k.getBuffer()[N + B];
+                  B += nt;
                   var X = et.getErrorCorrectPolynomial(G), F = at(R[L], X.getLength() - 1).mod(X);
                   for (q[L] = new Array(X.getLength() - 1), N = 0; N < q[L].length; N += 1) {
                     var Y = N + F.getLength() - q[L].length;
@@ -106,45 +106,45 @@ var Bt = { exports: {} };
                 return K;
               }(h, l);
             };
-            S.addData = function(o, a) {
-              var n = null;
+            S.addData = function(n, a) {
+              var o = null;
               switch (a = a || "Byte") {
                 case "Numeric":
-                  n = yt(o);
+                  o = yt(n);
                   break;
                 case "Alphanumeric":
-                  n = _t(o);
+                  o = _t(n);
                   break;
                 case "Byte":
-                  n = lt(o);
+                  o = lt(n);
                   break;
                 case "Kanji":
-                  n = ct(o);
+                  o = ct(n);
                   break;
                 default:
                   throw "mode:" + a;
               }
-              _.push(n), M = null;
-            }, S.isDark = function(o, a) {
-              if (o < 0 || b <= o || a < 0 || b <= a)
-                throw o + "," + a;
-              return c[o][a];
+              _.push(o), M = null;
+            }, S.isDark = function(n, a) {
+              if (n < 0 || b <= n || a < 0 || b <= a)
+                throw n + "," + a;
+              return c[n][a];
             }, S.getModuleCount = function() {
               return b;
             }, S.make = function() {
               if (v < 1) {
-                for (var o = 1; o < 40; o++) {
-                  for (var a = bt.getRSBlocks(o, f), n = dt(), l = 0; l < _.length; l++) {
+                for (var n = 1; n < 40; n++) {
+                  for (var a = bt.getRSBlocks(n, f), o = dt(), l = 0; l < _.length; l++) {
                     var h = _[l];
-                    n.put(h.getMode(), 4), n.put(h.getLength(), et.getLengthInBits(h.getMode(), o)), h.write(n);
+                    o.put(h.getMode(), 4), o.put(h.getLength(), et.getLengthInBits(h.getMode(), n)), h.write(o);
                   }
                   var y = 0;
                   for (l = 0; l < a.length; l++)
                     y += a[l].dataCount;
-                  if (n.getLengthInBits() <= 8 * y)
+                  if (o.getLengthInBits() <= 8 * y)
                     break;
                 }
-                v = o;
+                v = n;
               }
               W(!1, function() {
                 for (var x = 0, g = 0, k = 0; k < 8; k += 1) {
@@ -154,43 +154,43 @@ var Bt = { exports: {} };
                 }
                 return g;
               }());
-            }, S.createTableTag = function(o, a) {
-              o = o || 2;
-              var n = "";
-              n += '<table style="', n += " border-width: 0px; border-style: none;", n += " border-collapse: collapse;", n += " padding: 0px; margin: " + (a = a === void 0 ? 4 * o : a) + "px;", n += '">', n += "<tbody>";
+            }, S.createTableTag = function(n, a) {
+              n = n || 2;
+              var o = "";
+              o += '<table style="', o += " border-width: 0px; border-style: none;", o += " border-collapse: collapse;", o += " padding: 0px; margin: " + (a = a === void 0 ? 4 * n : a) + "px;", o += '">', o += "<tbody>";
               for (var l = 0; l < S.getModuleCount(); l += 1) {
-                n += "<tr>";
+                o += "<tr>";
                 for (var h = 0; h < S.getModuleCount(); h += 1)
-                  n += '<td style="', n += " border-width: 0px; border-style: none;", n += " border-collapse: collapse;", n += " padding: 0px; margin: 0px;", n += " width: " + o + "px;", n += " height: " + o + "px;", n += " background-color: ", n += S.isDark(l, h) ? "#000000" : "#ffffff", n += ";", n += '"/>';
-                n += "</tr>";
+                  o += '<td style="', o += " border-width: 0px; border-style: none;", o += " border-collapse: collapse;", o += " padding: 0px; margin: 0px;", o += " width: " + n + "px;", o += " height: " + n + "px;", o += " background-color: ", o += S.isDark(l, h) ? "#000000" : "#ffffff", o += ";", o += '"/>';
+                o += "</tr>";
               }
-              return (n += "</tbody>") + "</table>";
-            }, S.createSvgTag = function(o, a, n, l) {
+              return (o += "</tbody>") + "</table>";
+            }, S.createSvgTag = function(n, a, o, l) {
               var h = {};
-              typeof arguments[0] == "object" && (o = (h = arguments[0]).cellSize, a = h.margin, n = h.alt, l = h.title), o = o || 2, a = a === void 0 ? 4 * o : a, (n = typeof n == "string" ? { text: n } : n || {}).text = n.text || null, n.id = n.text ? n.id || "qrcode-description" : null, (l = typeof l == "string" ? { text: l } : l || {}).text = l.text || null, l.id = l.text ? l.id || "qrcode-title" : null;
-              var y, x, g, k, O = S.getModuleCount() * o + 2 * a, z = "";
-              for (k = "l" + o + ",0 0," + o + " -" + o + ",0 0,-" + o + "z ", z += '<svg version="1.1" xmlns="http://www.w3.org/2000/svg"', z += h.scalable ? "" : ' width="' + O + 'px" height="' + O + 'px"', z += ' viewBox="0 0 ' + O + " " + O + '" ', z += ' preserveAspectRatio="xMinYMin meet"', z += l.text || n.text ? ' role="img" aria-labelledby="' + p([l.id, n.id].join(" ").trim()) + '"' : "", z += ">", z += l.text ? '<title id="' + p(l.id) + '">' + p(l.text) + "</title>" : "", z += n.text ? '<description id="' + p(n.id) + '">' + p(n.text) + "</description>" : "", z += '<rect width="100%" height="100%" fill="white" cx="0" cy="0"/>', z += '<path d="', x = 0; x < S.getModuleCount(); x += 1)
-                for (g = x * o + a, y = 0; y < S.getModuleCount(); y += 1)
-                  S.isDark(x, y) && (z += "M" + (y * o + a) + "," + g + k);
-              return (z += '" stroke="transparent" fill="black"/>') + "</svg>";
-            }, S.createDataURL = function(o, a) {
-              o = o || 2, a = a === void 0 ? 4 * o : a;
-              var n = S.getModuleCount() * o + 2 * a, l = a, h = n - a;
-              return Ct(n, n, function(y, x) {
+              typeof arguments[0] == "object" && (n = (h = arguments[0]).cellSize, a = h.margin, o = h.alt, l = h.title), n = n || 2, a = a === void 0 ? 4 * n : a, (o = typeof o == "string" ? { text: o } : o || {}).text = o.text || null, o.id = o.text ? o.id || "qrcode-description" : null, (l = typeof l == "string" ? { text: l } : l || {}).text = l.text || null, l.id = l.text ? l.id || "qrcode-title" : null;
+              var y, x, g, k, O = S.getModuleCount() * n + 2 * a, B = "";
+              for (k = "l" + n + ",0 0," + n + " -" + n + ",0 0,-" + n + "z ", B += '<svg version="1.1" xmlns="http://www.w3.org/2000/svg"', B += h.scalable ? "" : ' width="' + O + 'px" height="' + O + 'px"', B += ' viewBox="0 0 ' + O + " " + O + '" ', B += ' preserveAspectRatio="xMinYMin meet"', B += l.text || o.text ? ' role="img" aria-labelledby="' + p([l.id, o.id].join(" ").trim()) + '"' : "", B += ">", B += l.text ? '<title id="' + p(l.id) + '">' + p(l.text) + "</title>" : "", B += o.text ? '<description id="' + p(o.id) + '">' + p(o.text) + "</description>" : "", B += '<rect width="100%" height="100%" fill="white" cx="0" cy="0"/>', B += '<path d="', x = 0; x < S.getModuleCount(); x += 1)
+                for (g = x * n + a, y = 0; y < S.getModuleCount(); y += 1)
+                  S.isDark(x, y) && (B += "M" + (y * n + a) + "," + g + k);
+              return (B += '" stroke="transparent" fill="black"/>') + "</svg>";
+            }, S.createDataURL = function(n, a) {
+              n = n || 2, a = a === void 0 ? 4 * n : a;
+              var o = S.getModuleCount() * n + 2 * a, l = a, h = o - a;
+              return Ct(o, o, function(y, x) {
                 if (l <= y && y < h && l <= x && x < h) {
-                  var g = Math.floor((y - l) / o), k = Math.floor((x - l) / o);
+                  var g = Math.floor((y - l) / n), k = Math.floor((x - l) / n);
                   return S.isDark(k, g) ? 0 : 1;
                 }
                 return 1;
               });
-            }, S.createImgTag = function(o, a, n) {
-              o = o || 2, a = a === void 0 ? 4 * o : a;
-              var l = S.getModuleCount() * o + 2 * a, h = "";
-              return h += "<img", h += ' src="', h += S.createDataURL(o, a), h += '"', h += ' width="', h += l, h += '"', h += ' height="', h += l, h += '"', n && (h += ' alt="', h += p(n), h += '"'), h + "/>";
+            }, S.createImgTag = function(n, a, o) {
+              n = n || 2, a = a === void 0 ? 4 * n : a;
+              var l = S.getModuleCount() * n + 2 * a, h = "";
+              return h += "<img", h += ' src="', h += S.createDataURL(n, a), h += '"', h += ' width="', h += l, h += '"', h += ' height="', h += l, h += '"', o && (h += ' alt="', h += p(o), h += '"'), h + "/>";
             };
-            var p = function(o) {
-              for (var a = "", n = 0; n < o.length; n += 1) {
-                var l = o.charAt(n);
+            var p = function(n) {
+              for (var a = "", o = 0; o < n.length; o += 1) {
+                var l = n.charAt(o);
                 switch (l) {
                   case "<":
                     a += "&lt;";
@@ -210,34 +210,34 @@ var Bt = { exports: {} };
               }
               return a;
             };
-            return S.createASCII = function(o, a) {
-              if ((o = o || 1) < 2)
+            return S.createASCII = function(n, a) {
+              if ((n = n || 1) < 2)
                 return function(R) {
                   R = R === void 0 ? 2 : R;
-                  var q, L, ot, G, N, X = 1 * S.getModuleCount() + 2 * R, F = R, Y = X - R, J = { "██": "█", "█ ": "▀", " █": "▄", "  ": " " }, K = { "██": "▀", "█ ": "▀", " █": " ", "  ": " " }, rt = "";
+                  var q, L, nt, G, N, X = 1 * S.getModuleCount() + 2 * R, F = R, Y = X - R, J = { "██": "█", "█ ": "▀", " █": "▄", "  ": " " }, K = { "██": "▀", "█ ": "▀", " █": " ", "  ": " " }, rt = "";
                   for (q = 0; q < X; q += 2) {
-                    for (ot = Math.floor((q - F) / 1), G = Math.floor((q + 1 - F) / 1), L = 0; L < X; L += 1)
-                      N = "█", F <= L && L < Y && F <= q && q < Y && S.isDark(ot, Math.floor((L - F) / 1)) && (N = " "), F <= L && L < Y && F <= q + 1 && q + 1 < Y && S.isDark(G, Math.floor((L - F) / 1)) ? N += " " : N += "█", rt += R < 1 && q + 1 >= Y ? K[N] : J[N];
+                    for (nt = Math.floor((q - F) / 1), G = Math.floor((q + 1 - F) / 1), L = 0; L < X; L += 1)
+                      N = "█", F <= L && L < Y && F <= q && q < Y && S.isDark(nt, Math.floor((L - F) / 1)) && (N = " "), F <= L && L < Y && F <= q + 1 && q + 1 < Y && S.isDark(G, Math.floor((L - F) / 1)) ? N += " " : N += "█", rt += R < 1 && q + 1 >= Y ? K[N] : J[N];
                     rt += `
 `;
                   }
                   return X % 2 && R > 0 ? rt.substring(0, rt.length - X - 1) + Array(X + 1).join("▀") : rt.substring(0, rt.length - 1);
                 }(a);
-              o -= 1, a = a === void 0 ? 2 * o : a;
-              var n, l, h, y, x = S.getModuleCount() * o + 2 * a, g = a, k = x - a, O = Array(o + 1).join("██"), z = Array(o + 1).join("  "), j = "", D = "";
-              for (n = 0; n < x; n += 1) {
-                for (h = Math.floor((n - g) / o), D = "", l = 0; l < x; l += 1)
-                  y = 1, g <= l && l < k && g <= n && n < k && S.isDark(h, Math.floor((l - g) / o)) && (y = 0), D += y ? O : z;
-                for (h = 0; h < o; h += 1)
+              n -= 1, a = a === void 0 ? 2 * n : a;
+              var o, l, h, y, x = S.getModuleCount() * n + 2 * a, g = a, k = x - a, O = Array(n + 1).join("██"), B = Array(n + 1).join("  "), j = "", D = "";
+              for (o = 0; o < x; o += 1) {
+                for (h = Math.floor((o - g) / n), D = "", l = 0; l < x; l += 1)
+                  y = 1, g <= l && l < k && g <= o && o < k && S.isDark(h, Math.floor((l - g) / n)) && (y = 0), D += y ? O : B;
+                for (h = 0; h < n; h += 1)
                   j += D + `
 `;
               }
               return j.substring(0, j.length - 1);
-            }, S.renderTo2dContext = function(o, a) {
+            }, S.renderTo2dContext = function(n, a) {
               a = a || 2;
-              for (var n = S.getModuleCount(), l = 0; l < n; l++)
-                for (var h = 0; h < n; h++)
-                  o.fillStyle = S.isDark(l, h) ? "black" : "white", o.fillRect(l * a, h * a, a, a);
+              for (var o = S.getModuleCount(), l = 0; l < o; l++)
+                for (var h = 0; h < o; h++)
+                  n.fillStyle = S.isDark(l, h) ? "black" : "white", n.fillRect(l * a, h * a, a, a);
             }, S;
           };
           H.stringToBytes = (H.stringToBytesFuncs = { default: function(w) {
@@ -277,7 +277,7 @@ var Bt = { exports: {} };
               return b;
             };
           };
-          var Z, tt, nt, Q, U, ut = { L: 1, M: 0, Q: 3, H: 2 }, et = (Z = [[], [6, 18], [6, 22], [6, 26], [6, 30], [6, 34], [6, 22, 38], [6, 24, 42], [6, 26, 46], [6, 28, 50], [6, 30, 54], [6, 32, 58], [6, 34, 62], [6, 26, 46, 66], [6, 26, 48, 70], [6, 26, 50, 74], [6, 30, 54, 78], [6, 30, 56, 82], [6, 30, 58, 86], [6, 34, 62, 90], [6, 28, 50, 72, 94], [6, 26, 50, 74, 98], [6, 30, 54, 78, 102], [6, 28, 54, 80, 106], [6, 32, 58, 84, 110], [6, 30, 58, 86, 114], [6, 34, 62, 90, 118], [6, 26, 50, 74, 98, 122], [6, 30, 54, 78, 102, 126], [6, 26, 52, 78, 104, 130], [6, 30, 56, 82, 108, 134], [6, 34, 60, 86, 112, 138], [6, 30, 58, 86, 114, 142], [6, 34, 62, 90, 118, 146], [6, 30, 54, 78, 102, 126, 150], [6, 24, 50, 76, 102, 128, 154], [6, 28, 54, 80, 106, 132, 158], [6, 32, 58, 84, 110, 136, 162], [6, 26, 54, 82, 110, 138, 166], [6, 30, 58, 86, 114, 142, 170]], tt = 1335, nt = 7973, U = function(w) {
+          var Z, tt, ot, Q, U, ut = { L: 1, M: 0, Q: 3, H: 2 }, et = (Z = [[], [6, 18], [6, 22], [6, 26], [6, 30], [6, 34], [6, 22, 38], [6, 24, 42], [6, 26, 46], [6, 28, 50], [6, 30, 54], [6, 32, 58], [6, 34, 62], [6, 26, 46, 66], [6, 26, 48, 70], [6, 26, 50, 74], [6, 30, 54, 78], [6, 30, 56, 82], [6, 30, 58, 86], [6, 34, 62, 90], [6, 28, 50, 72, 94], [6, 26, 50, 74, 98], [6, 30, 54, 78, 102], [6, 28, 54, 80, 106], [6, 32, 58, 84, 110], [6, 30, 58, 86, 114], [6, 34, 62, 90, 118], [6, 26, 50, 74, 98, 122], [6, 30, 54, 78, 102, 126], [6, 26, 52, 78, 104, 130], [6, 30, 56, 82, 108, 134], [6, 34, 60, 86, 112, 138], [6, 30, 58, 86, 114, 142], [6, 34, 62, 90, 118, 146], [6, 30, 54, 78, 102, 126, 150], [6, 24, 50, 76, 102, 128, 154], [6, 28, 54, 80, 106, 132, 158], [6, 32, 58, 84, 110, 136, 162], [6, 26, 54, 82, 110, 138, 166], [6, 30, 58, 86, 114, 142, 170]], tt = 1335, ot = 7973, U = function(w) {
             for (var m = 0; w != 0; )
               m += 1, w >>>= 1;
             return m;
@@ -286,8 +286,8 @@ var Bt = { exports: {} };
               m ^= tt << U(m) - U(tt);
             return 21522 ^ (w << 10 | m);
           }, Q.getBCHTypeNumber = function(w) {
-            for (var m = w << 12; U(m) - U(nt) >= 0; )
-              m ^= nt << U(m) - U(nt);
+            for (var m = w << 12; U(m) - U(ot) >= 0; )
+              m ^= ot << U(m) - U(ot);
             return w << 12 | m;
           }, Q.getPatternPosition = function(w) {
             return Z[w - 1];
@@ -639,20 +639,20 @@ var Bt = { exports: {} };
             return b;
           }, Ct = function(w, m, v) {
             for (var f = function(d, t) {
-              var r = d, e = t, i = new Array(d * t), u = { setPixel: function(o, a, n) {
-                i[a * r + o] = n;
-              }, write: function(o) {
-                o.writeString("GIF87a"), o.writeShort(r), o.writeShort(e), o.writeByte(128), o.writeByte(0), o.writeByte(0), o.writeByte(0), o.writeByte(0), o.writeByte(0), o.writeByte(255), o.writeByte(255), o.writeByte(255), o.writeString(","), o.writeShort(0), o.writeShort(0), o.writeShort(r), o.writeShort(e), o.writeByte(0);
+              var r = d, e = t, i = new Array(d * t), u = { setPixel: function(n, a, o) {
+                i[a * r + n] = o;
+              }, write: function(n) {
+                n.writeString("GIF87a"), n.writeShort(r), n.writeShort(e), n.writeByte(128), n.writeByte(0), n.writeByte(0), n.writeByte(0), n.writeByte(0), n.writeByte(0), n.writeByte(255), n.writeByte(255), n.writeByte(255), n.writeString(","), n.writeShort(0), n.writeShort(0), n.writeShort(r), n.writeShort(e), n.writeByte(0);
                 var a = s(2);
-                o.writeByte(2);
-                for (var n = 0; a.length - n > 255; )
-                  o.writeByte(255), o.writeBytes(a, n, 255), n += 255;
-                o.writeByte(a.length - n), o.writeBytes(a, n, a.length - n), o.writeByte(0), o.writeString(";");
-              } }, s = function(o) {
-                for (var a = 1 << o, n = 1 + (1 << o), l = o + 1, h = p(), y = 0; y < a; y += 1)
+                n.writeByte(2);
+                for (var o = 0; a.length - o > 255; )
+                  n.writeByte(255), n.writeBytes(a, o, 255), o += 255;
+                n.writeByte(a.length - o), n.writeBytes(a, o, a.length - o), n.writeByte(0), n.writeString(";");
+              } }, s = function(n) {
+                for (var a = 1 << n, o = 1 + (1 << n), l = n + 1, h = p(), y = 0; y < a; y += 1)
                   h.add(String.fromCharCode(y));
-                h.add(String.fromCharCode(a)), h.add(String.fromCharCode(n));
-                var x, g, k, O = xt(), z = (x = O, g = 0, k = 0, { write: function(q, L) {
+                h.add(String.fromCharCode(a)), h.add(String.fromCharCode(o));
+                var x, g, k, O = xt(), B = (x = O, g = 0, k = 0, { write: function(q, L) {
                   if (q >>> L)
                     throw "length over";
                   for (; g + L >= 8; )
@@ -661,26 +661,26 @@ var Bt = { exports: {} };
                 }, flush: function() {
                   g > 0 && x.writeByte(k);
                 } });
-                z.write(a, l);
+                B.write(a, l);
                 var j = 0, D = String.fromCharCode(i[j]);
                 for (j += 1; j < i.length; ) {
                   var R = String.fromCharCode(i[j]);
-                  j += 1, h.contains(D + R) ? D += R : (z.write(h.indexOf(D), l), h.size() < 4095 && (h.size() == 1 << l && (l += 1), h.add(D + R)), D = R);
+                  j += 1, h.contains(D + R) ? D += R : (B.write(h.indexOf(D), l), h.size() < 4095 && (h.size() == 1 << l && (l += 1), h.add(D + R)), D = R);
                 }
-                return z.write(h.indexOf(D), l), z.write(n, l), z.flush(), O.toByteArray();
+                return B.write(h.indexOf(D), l), B.write(o, l), B.flush(), O.toByteArray();
               }, p = function() {
-                var o = {}, a = 0, n = { add: function(l) {
-                  if (n.contains(l))
+                var n = {}, a = 0, o = { add: function(l) {
+                  if (o.contains(l))
                     throw "dup key:" + l;
-                  o[l] = a, a += 1;
+                  n[l] = a, a += 1;
                 }, size: function() {
                   return a;
                 }, indexOf: function(l) {
-                  return o[l];
+                  return n[l];
                 }, contains: function(l) {
-                  return o[l] !== void 0;
+                  return n[l] !== void 0;
                 } };
-                return n;
+                return o;
               };
               return u;
             }(w, m), c = 0; c < m; c += 1)
@@ -711,7 +711,7 @@ var Bt = { exports: {} };
                   u(d >>> t - 6), t -= 6;
               }, i.flush = function() {
                 if (t > 0 && (u(d << 6 - t), d = 0, t = 0), r % 3 != 0)
-                  for (var p = 3 - r % 3, o = 0; o < p; o += 1)
+                  for (var p = 3 - r % 3, n = 0; n < p; n += 1)
                     e += "=";
               }, i.toString = function() {
                 return e;
@@ -724,9 +724,9 @@ var Bt = { exports: {} };
         }();
         V.stringToBytesFuncs["UTF-8"] = function(H) {
           return function(Z) {
-            for (var tt = [], nt = 0; nt < Z.length; nt++) {
-              var Q = Z.charCodeAt(nt);
-              Q < 128 ? tt.push(Q) : Q < 2048 ? tt.push(192 | Q >> 6, 128 | 63 & Q) : Q < 55296 || Q >= 57344 ? tt.push(224 | Q >> 12, 128 | Q >> 6 & 63, 128 | 63 & Q) : (nt++, Q = 65536 + ((1023 & Q) << 10 | 1023 & Z.charCodeAt(nt)), tt.push(240 | Q >> 18, 128 | Q >> 12 & 63, 128 | Q >> 6 & 63, 128 | 63 & Q));
+            for (var tt = [], ot = 0; ot < Z.length; ot++) {
+              var Q = Z.charCodeAt(ot);
+              Q < 128 ? tt.push(Q) : Q < 2048 ? tt.push(192 | Q >> 6, 128 | 63 & Q) : Q < 55296 || Q >= 57344 ? tt.push(224 | Q >> 12, 128 | Q >> 6 & 63, 128 | 63 & Q) : (ot++, Q = 65536 + ((1023 & Q) << 10 | 1023 & Z.charCodeAt(ot)), tt.push(240 | Q >> 18, 128 | Q >> 12 & 63, 128 | Q >> 6 & 63, 128 | 63 & Q));
             }
             return tt;
           }(H);
@@ -768,17 +768,17 @@ var Bt = { exports: {} };
           var r = document.createElement("a");
           r.download = t, r.href = d, document.body.appendChild(r), r.click(), document.body.removeChild(r);
         }
-        function nt(d) {
+        function ot(d) {
           return t = this, r = void 0, i = function() {
             return function(u, s) {
-              var p, o, a, n, l = { label: 0, sent: function() {
+              var p, n, a, o, l = { label: 0, sent: function() {
                 if (1 & a[0])
                   throw a[1];
                 return a[1];
               }, trys: [], ops: [] };
-              return n = { next: h(0), throw: h(1), return: h(2) }, typeof Symbol == "function" && (n[Symbol.iterator] = function() {
+              return o = { next: h(0), throw: h(1), return: h(2) }, typeof Symbol == "function" && (o[Symbol.iterator] = function() {
                 return this;
-              }), n;
+              }), o;
               function h(y) {
                 return function(x) {
                   return function(g) {
@@ -786,9 +786,9 @@ var Bt = { exports: {} };
                       throw new TypeError("Generator is already executing.");
                     for (; l; )
                       try {
-                        if (p = 1, o && (a = 2 & g[0] ? o.return : g[0] ? o.throw || ((a = o.return) && a.call(o), 0) : o.next) && !(a = a.call(o, g[1])).done)
+                        if (p = 1, n && (a = 2 & g[0] ? n.return : g[0] ? n.throw || ((a = n.return) && a.call(n), 0) : n.next) && !(a = a.call(n, g[1])).done)
                           return a;
-                        switch (o = 0, a && (g = [2 & g[0], a.value]), g[0]) {
+                        switch (n = 0, a && (g = [2 & g[0], a.value]), g[0]) {
                           case 0:
                           case 1:
                             a = g;
@@ -796,7 +796,7 @@ var Bt = { exports: {} };
                           case 4:
                             return l.label++, { value: g[1], done: !1 };
                           case 5:
-                            l.label++, o = g[1], g = [0];
+                            l.label++, n = g[1], g = [0];
                             continue;
                           case 7:
                             g = l.ops.pop(), l.trys.pop();
@@ -823,7 +823,7 @@ var Bt = { exports: {} };
                         }
                         g = s.call(u, l);
                       } catch (k) {
-                        g = [6, k], o = 0;
+                        g = [6, k], n = 0;
                       } finally {
                         p = a = 0;
                       }
@@ -837,33 +837,33 @@ var Bt = { exports: {} };
               return [2, new Promise(function(s) {
                 var p = new XMLHttpRequest();
                 p.onload = function() {
-                  var o = new FileReader();
-                  o.onloadend = function() {
-                    s(o.result);
-                  }, o.readAsDataURL(p.response);
+                  var n = new FileReader();
+                  n.onloadend = function() {
+                    s(n.result);
+                  }, n.readAsDataURL(p.response);
                 }, p.open("GET", d), p.responseType = "blob", p.send();
               })];
             });
           }, new ((e = void 0) || (e = Promise))(function(u, s) {
-            function p(n) {
+            function p(o) {
               try {
-                a(i.next(n));
+                a(i.next(o));
               } catch (l) {
                 s(l);
               }
             }
-            function o(n) {
+            function n(o) {
               try {
-                a(i.throw(n));
+                a(i.throw(o));
               } catch (l) {
                 s(l);
               }
             }
-            function a(n) {
+            function a(o) {
               var l;
-              n.done ? u(n.value) : (l = n.value, l instanceof e ? l : new e(function(h) {
+              o.done ? u(o.value) : (l = o.value, l instanceof e ? l : new e(function(h) {
                 h(l);
-              })).then(p, o);
+              })).then(p, n);
             }
             a((i = i.apply(t, r || [])).next());
           });
@@ -907,8 +907,8 @@ var Bt = { exports: {} };
             }
             u.call(this, { x: t, y: r, size: e, getNeighbor: i });
           }, d.prototype._rotateFigure = function(t) {
-            var r, e = t.x, i = t.y, u = t.size, s = t.rotation, p = s === void 0 ? 0 : s, o = e + u / 2, a = i + u / 2;
-            (0, t.draw)(), (r = this._element) === null || r === void 0 || r.setAttribute("transform", "rotate(" + 180 * p / Math.PI + "," + o + "," + a + ")");
+            var r, e = t.x, i = t.y, u = t.size, s = t.rotation, p = s === void 0 ? 0 : s, n = e + u / 2, a = i + u / 2;
+            (0, t.draw)(), (r = this._element) === null || r === void 0 || r.setAttribute("transform", "rotate(" + 180 * p / Math.PI + "," + n + "," + a + ")");
           }, d.prototype._basicDot = function(t) {
             var r = this, e = t.size, i = t.x, u = t.y;
             this._rotateFigure(U(U({}, t), { draw: function() {
@@ -946,41 +946,41 @@ var Bt = { exports: {} };
             var r = t.x, e = t.y, i = t.size;
             this._basicSquare({ x: r, y: e, size: i, rotation: 0 });
           }, d.prototype._drawRounded = function(t) {
-            var r = t.x, e = t.y, i = t.size, u = t.getNeighbor, s = u ? +u(-1, 0) : 0, p = u ? +u(1, 0) : 0, o = u ? +u(0, -1) : 0, a = u ? +u(0, 1) : 0, n = s + p + o + a;
-            if (n !== 0)
-              if (n > 2 || s && p || o && a)
+            var r = t.x, e = t.y, i = t.size, u = t.getNeighbor, s = u ? +u(-1, 0) : 0, p = u ? +u(1, 0) : 0, n = u ? +u(0, -1) : 0, a = u ? +u(0, 1) : 0, o = s + p + n + a;
+            if (o !== 0)
+              if (o > 2 || s && p || n && a)
                 this._basicSquare({ x: r, y: e, size: i, rotation: 0 });
               else {
-                if (n === 2) {
+                if (o === 2) {
                   var l = 0;
-                  return s && o ? l = Math.PI / 2 : o && p ? l = Math.PI : p && a && (l = -Math.PI / 2), void this._basicCornerRounded({ x: r, y: e, size: i, rotation: l });
+                  return s && n ? l = Math.PI / 2 : n && p ? l = Math.PI : p && a && (l = -Math.PI / 2), void this._basicCornerRounded({ x: r, y: e, size: i, rotation: l });
                 }
-                if (n === 1)
-                  return l = 0, o ? l = Math.PI / 2 : p ? l = Math.PI : a && (l = -Math.PI / 2), void this._basicSideRounded({ x: r, y: e, size: i, rotation: l });
+                if (o === 1)
+                  return l = 0, n ? l = Math.PI / 2 : p ? l = Math.PI : a && (l = -Math.PI / 2), void this._basicSideRounded({ x: r, y: e, size: i, rotation: l });
               }
             else
               this._basicDot({ x: r, y: e, size: i, rotation: 0 });
           }, d.prototype._drawExtraRounded = function(t) {
-            var r = t.x, e = t.y, i = t.size, u = t.getNeighbor, s = u ? +u(-1, 0) : 0, p = u ? +u(1, 0) : 0, o = u ? +u(0, -1) : 0, a = u ? +u(0, 1) : 0, n = s + p + o + a;
-            if (n !== 0)
-              if (n > 2 || s && p || o && a)
+            var r = t.x, e = t.y, i = t.size, u = t.getNeighbor, s = u ? +u(-1, 0) : 0, p = u ? +u(1, 0) : 0, n = u ? +u(0, -1) : 0, a = u ? +u(0, 1) : 0, o = s + p + n + a;
+            if (o !== 0)
+              if (o > 2 || s && p || n && a)
                 this._basicSquare({ x: r, y: e, size: i, rotation: 0 });
               else {
-                if (n === 2) {
+                if (o === 2) {
                   var l = 0;
-                  return s && o ? l = Math.PI / 2 : o && p ? l = Math.PI : p && a && (l = -Math.PI / 2), void this._basicCornerExtraRounded({ x: r, y: e, size: i, rotation: l });
+                  return s && n ? l = Math.PI / 2 : n && p ? l = Math.PI : p && a && (l = -Math.PI / 2), void this._basicCornerExtraRounded({ x: r, y: e, size: i, rotation: l });
                 }
-                if (n === 1)
-                  return l = 0, o ? l = Math.PI / 2 : p ? l = Math.PI : a && (l = -Math.PI / 2), void this._basicSideRounded({ x: r, y: e, size: i, rotation: l });
+                if (o === 1)
+                  return l = 0, n ? l = Math.PI / 2 : p ? l = Math.PI : a && (l = -Math.PI / 2), void this._basicSideRounded({ x: r, y: e, size: i, rotation: l });
               }
             else
               this._basicDot({ x: r, y: e, size: i, rotation: 0 });
           }, d.prototype._drawClassy = function(t) {
-            var r = t.x, e = t.y, i = t.size, u = t.getNeighbor, s = u ? +u(-1, 0) : 0, p = u ? +u(1, 0) : 0, o = u ? +u(0, -1) : 0, a = u ? +u(0, 1) : 0;
-            s + p + o + a !== 0 ? s || o ? p || a ? this._basicSquare({ x: r, y: e, size: i, rotation: 0 }) : this._basicCornerRounded({ x: r, y: e, size: i, rotation: Math.PI / 2 }) : this._basicCornerRounded({ x: r, y: e, size: i, rotation: -Math.PI / 2 }) : this._basicCornersRounded({ x: r, y: e, size: i, rotation: Math.PI / 2 });
+            var r = t.x, e = t.y, i = t.size, u = t.getNeighbor, s = u ? +u(-1, 0) : 0, p = u ? +u(1, 0) : 0, n = u ? +u(0, -1) : 0, a = u ? +u(0, 1) : 0;
+            s + p + n + a !== 0 ? s || n ? p || a ? this._basicSquare({ x: r, y: e, size: i, rotation: 0 }) : this._basicCornerRounded({ x: r, y: e, size: i, rotation: Math.PI / 2 }) : this._basicCornerRounded({ x: r, y: e, size: i, rotation: -Math.PI / 2 }) : this._basicCornersRounded({ x: r, y: e, size: i, rotation: Math.PI / 2 });
           }, d.prototype._drawClassyRounded = function(t) {
-            var r = t.x, e = t.y, i = t.size, u = t.getNeighbor, s = u ? +u(-1, 0) : 0, p = u ? +u(1, 0) : 0, o = u ? +u(0, -1) : 0, a = u ? +u(0, 1) : 0;
-            s + p + o + a !== 0 ? s || o ? p || a ? this._basicSquare({ x: r, y: e, size: i, rotation: 0 }) : this._basicCornerExtraRounded({ x: r, y: e, size: i, rotation: Math.PI / 2 }) : this._basicCornerExtraRounded({ x: r, y: e, size: i, rotation: -Math.PI / 2 }) : this._basicCornersRounded({ x: r, y: e, size: i, rotation: Math.PI / 2 });
+            var r = t.x, e = t.y, i = t.size, u = t.getNeighbor, s = u ? +u(-1, 0) : 0, p = u ? +u(1, 0) : 0, n = u ? +u(0, -1) : 0, a = u ? +u(0, 1) : 0;
+            s + p + n + a !== 0 ? s || n ? p || a ? this._basicSquare({ x: r, y: e, size: i, rotation: 0 }) : this._basicCornerExtraRounded({ x: r, y: e, size: i, rotation: Math.PI / 2 }) : this._basicCornerExtraRounded({ x: r, y: e, size: i, rotation: -Math.PI / 2 }) : this._basicCornersRounded({ x: r, y: e, size: i, rotation: Math.PI / 2 });
           }, d;
         }();
         var et = function() {
@@ -1011,8 +1011,8 @@ var Bt = { exports: {} };
             }
             u.call(this, { x: t, y: r, size: e, rotation: i });
           }, d.prototype._rotateFigure = function(t) {
-            var r, e = t.x, i = t.y, u = t.size, s = t.rotation, p = s === void 0 ? 0 : s, o = e + u / 2, a = i + u / 2;
-            (0, t.draw)(), (r = this._element) === null || r === void 0 || r.setAttribute("transform", "rotate(" + 180 * p / Math.PI + "," + o + "," + a + ")");
+            var r, e = t.x, i = t.y, u = t.size, s = t.rotation, p = s === void 0 ? 0 : s, n = e + u / 2, a = i + u / 2;
+            (0, t.draw)(), (r = this._element) === null || r === void 0 || r.setAttribute("transform", "rotate(" + 180 * p / Math.PI + "," + n + "," + a + ")");
           }, d.prototype._basicDot = function(t) {
             var r = this, e = t.size, i = t.x, u = t.y, s = e / 7;
             this._rotateFigure(et(et({}, t), { draw: function() {
@@ -1064,8 +1064,8 @@ var Bt = { exports: {} };
             }
             u.call(this, { x: t, y: r, size: e, rotation: i });
           }, d.prototype._rotateFigure = function(t) {
-            var r, e = t.x, i = t.y, u = t.size, s = t.rotation, p = s === void 0 ? 0 : s, o = e + u / 2, a = i + u / 2;
-            (0, t.draw)(), (r = this._element) === null || r === void 0 || r.setAttribute("transform", "rotate(" + 180 * p / Math.PI + "," + o + "," + a + ")");
+            var r, e = t.x, i = t.y, u = t.size, s = t.rotation, p = s === void 0 ? 0 : s, n = e + u / 2, a = i + u / 2;
+            (0, t.draw)(), (r = this._element) === null || r === void 0 || r.setAttribute("transform", "rotate(" + 180 * p / Math.PI + "," + n + "," + a + ")");
           }, d.prototype._basicDot = function(t) {
             var r = this, e = t.size, i = t.x, u = t.y;
             this._rotateFigure(at(at({}, t), { draw: function() {
@@ -1088,25 +1088,25 @@ var Bt = { exports: {} };
           return new (r || (r = Promise))(function(i, u) {
             function s(a) {
               try {
-                o(e.next(a));
-              } catch (n) {
-                u(n);
+                n(e.next(a));
+              } catch (o) {
+                u(o);
               }
             }
             function p(a) {
               try {
-                o(e.throw(a));
-              } catch (n) {
-                u(n);
+                n(e.throw(a));
+              } catch (o) {
+                u(o);
               }
             }
-            function o(a) {
-              var n;
-              a.done ? i(a.value) : (n = a.value, n instanceof r ? n : new r(function(l) {
-                l(n);
+            function n(a) {
+              var o;
+              a.done ? i(a.value) : (o = a.value, o instanceof r ? o : new r(function(l) {
+                l(o);
               })).then(s, p);
             }
-            o((e = e.apply(d, t || [])).next());
+            n((e = e.apply(d, t || [])).next());
           });
         }, _t = function(d, t) {
           var r, e, i, u, s = { label: 0, sent: function() {
@@ -1117,58 +1117,58 @@ var Bt = { exports: {} };
           return u = { next: p(0), throw: p(1), return: p(2) }, typeof Symbol == "function" && (u[Symbol.iterator] = function() {
             return this;
           }), u;
-          function p(o) {
+          function p(n) {
             return function(a) {
-              return function(n) {
+              return function(o) {
                 if (r)
                   throw new TypeError("Generator is already executing.");
                 for (; s; )
                   try {
-                    if (r = 1, e && (i = 2 & n[0] ? e.return : n[0] ? e.throw || ((i = e.return) && i.call(e), 0) : e.next) && !(i = i.call(e, n[1])).done)
+                    if (r = 1, e && (i = 2 & o[0] ? e.return : o[0] ? e.throw || ((i = e.return) && i.call(e), 0) : e.next) && !(i = i.call(e, o[1])).done)
                       return i;
-                    switch (e = 0, i && (n = [2 & n[0], i.value]), n[0]) {
+                    switch (e = 0, i && (o = [2 & o[0], i.value]), o[0]) {
                       case 0:
                       case 1:
-                        i = n;
+                        i = o;
                         break;
                       case 4:
-                        return s.label++, { value: n[1], done: !1 };
+                        return s.label++, { value: o[1], done: !1 };
                       case 5:
-                        s.label++, e = n[1], n = [0];
+                        s.label++, e = o[1], o = [0];
                         continue;
                       case 7:
-                        n = s.ops.pop(), s.trys.pop();
+                        o = s.ops.pop(), s.trys.pop();
                         continue;
                       default:
-                        if (!((i = (i = s.trys).length > 0 && i[i.length - 1]) || n[0] !== 6 && n[0] !== 2)) {
+                        if (!((i = (i = s.trys).length > 0 && i[i.length - 1]) || o[0] !== 6 && o[0] !== 2)) {
                           s = 0;
                           continue;
                         }
-                        if (n[0] === 3 && (!i || n[1] > i[0] && n[1] < i[3])) {
-                          s.label = n[1];
+                        if (o[0] === 3 && (!i || o[1] > i[0] && o[1] < i[3])) {
+                          s.label = o[1];
                           break;
                         }
-                        if (n[0] === 6 && s.label < i[1]) {
-                          s.label = i[1], i = n;
+                        if (o[0] === 6 && s.label < i[1]) {
+                          s.label = i[1], i = o;
                           break;
                         }
                         if (i && s.label < i[2]) {
-                          s.label = i[2], s.ops.push(n);
+                          s.label = i[2], s.ops.push(o);
                           break;
                         }
                         i[2] && s.ops.pop(), s.trys.pop();
                         continue;
                     }
-                    n = t.call(d, s);
+                    o = t.call(d, s);
                   } catch (l) {
-                    n = [6, l], e = 0;
+                    o = [6, l], e = 0;
                   } finally {
                     r = i = 0;
                   }
-                if (5 & n[0])
-                  throw n[1];
-                return { value: n[0] ? n[1] : void 0, done: !0 };
-              }([o, a]);
+                if (5 & o[0])
+                  throw o[1];
+                return { value: o[0] ? o[1] : void 0, done: !0 };
+              }([n, a]);
             };
           }
         }, lt = [[1, 1, 1, 1, 1, 1, 1], [1, 0, 0, 0, 0, 0, 1], [1, 0, 0, 0, 0, 0, 1], [1, 0, 0, 0, 0, 0, 1], [1, 0, 0, 0, 0, 0, 1], [1, 0, 0, 0, 0, 0, 1], [1, 1, 1, 1, 1, 1, 1]], ct = [[0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0], [0, 0, 1, 1, 1, 0, 0], [0, 0, 1, 1, 1, 0, 0], [0, 0, 1, 1, 1, 0, 0], [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0]];
@@ -1184,7 +1184,7 @@ var Bt = { exports: {} };
             return this._element;
           }, d.prototype.drawQR = function(t) {
             return yt(this, void 0, void 0, function() {
-              var r, e, i, u, s, p, o, a, n, l, h = this;
+              var r, e, i, u, s, p, n, a, o, l, h = this;
               return _t(this, function(y) {
                 switch (y.label) {
                   case 0:
@@ -1192,17 +1192,17 @@ var Bt = { exports: {} };
                   case 1:
                     if (y.sent(), !this._image)
                       return [2];
-                    p = this._options, o = p.imageOptions, a = p.qrOptions, n = o.imageSize * Q[a.errorCorrectionLevel], l = Math.floor(n * r * r), s = function(x) {
-                      var g = x.originalHeight, k = x.originalWidth, O = x.maxHiddenDots, z = x.maxHiddenAxisDots, j = x.dotSize, D = { x: 0, y: 0 }, R = { x: 0, y: 0 };
+                    p = this._options, n = p.imageOptions, a = p.qrOptions, o = n.imageSize * Q[a.errorCorrectionLevel], l = Math.floor(o * r * r), s = function(x) {
+                      var g = x.originalHeight, k = x.originalWidth, O = x.maxHiddenDots, B = x.maxHiddenAxisDots, j = x.dotSize, D = { x: 0, y: 0 }, R = { x: 0, y: 0 };
                       if (g <= 0 || k <= 0 || O <= 0 || j <= 0)
                         return { height: 0, width: 0, hideYDots: 0, hideXDots: 0 };
                       var q = g / k;
-                      return D.x = Math.floor(Math.sqrt(O / q)), D.x <= 0 && (D.x = 1), z && z < D.x && (D.x = z), D.x % 2 == 0 && D.x--, R.x = D.x * j, D.y = 1 + 2 * Math.ceil((D.x * q - 1) / 2), R.y = Math.round(R.x * q), (D.y * D.x > O || z && z < D.y) && (z && z < D.y ? (D.y = z, D.y % 2 == 0 && D.x--) : D.y -= 2, R.y = D.y * j, D.x = 1 + 2 * Math.ceil((D.y / q - 1) / 2), R.x = Math.round(R.y / q)), { height: R.y, width: R.x, hideYDots: D.y, hideXDots: D.x };
+                      return D.x = Math.floor(Math.sqrt(O / q)), D.x <= 0 && (D.x = 1), B && B < D.x && (D.x = B), D.x % 2 == 0 && D.x--, R.x = D.x * j, D.y = 1 + 2 * Math.ceil((D.x * q - 1) / 2), R.y = Math.round(R.x * q), (D.y * D.x > O || B && B < D.y) && (B && B < D.y ? (D.y = B, D.y % 2 == 0 && D.x--) : D.y -= 2, R.y = D.y * j, D.x = 1 + 2 * Math.ceil((D.y / q - 1) / 2), R.x = Math.round(R.y / q)), { height: R.y, width: R.x, hideYDots: D.y, hideXDots: D.x };
                     }({ originalWidth: this._image.width, originalHeight: this._image.height, maxHiddenDots: l, maxHiddenAxisDots: r - 14, dotSize: u }), y.label = 2;
                   case 2:
                     return this.drawBackground(), this.drawDots(function(x, g) {
-                      var k, O, z, j, D, R;
-                      return !(h._options.imageOptions.hideBackgroundDots && x >= (r - s.hideXDots) / 2 && x < (r + s.hideXDots) / 2 && g >= (r - s.hideYDots) / 2 && g < (r + s.hideYDots) / 2 || !((k = lt[x]) === null || k === void 0) && k[g] || !((O = lt[x - r + 7]) === null || O === void 0) && O[g] || !((z = lt[x]) === null || z === void 0) && z[g - r + 7] || !((j = ct[x]) === null || j === void 0) && j[g] || !((D = ct[x - r + 7]) === null || D === void 0) && D[g] || !((R = ct[x]) === null || R === void 0) && R[g - r + 7]);
+                      var k, O, B, j, D, R;
+                      return !(h._options.imageOptions.hideBackgroundDots && x >= (r - s.hideXDots) / 2 && x < (r + s.hideXDots) / 2 && g >= (r - s.hideYDots) / 2 && g < (r + s.hideYDots) / 2 || !((k = lt[x]) === null || k === void 0) && k[g] || !((O = lt[x - r + 7]) === null || O === void 0) && O[g] || !((B = lt[x]) === null || B === void 0) && B[g - r + 7] || !((j = ct[x]) === null || j === void 0) && j[g] || !((D = ct[x - r + 7]) === null || D === void 0) && D[g] || !((R = ct[x]) === null || R === void 0) && R[g - r + 7]);
                     }), this.drawCorners(), this._options.image ? [4, this.drawImage({ width: s.width, height: s.height, count: r, dotSize: u })] : [3, 4];
                   case 3:
                     y.sent(), y.label = 4;
@@ -1216,8 +1216,8 @@ var Bt = { exports: {} };
             if (i) {
               var s = (t = u.backgroundOptions) === null || t === void 0 ? void 0 : t.gradient, p = (r = u.backgroundOptions) === null || r === void 0 ? void 0 : r.color;
               if ((s || p) && this._createColor({ options: s, color: p, additionalRotation: 0, x: 0, y: 0, height: u.height, width: u.width, name: "background-color" }), (e = u.backgroundOptions) === null || e === void 0 ? void 0 : e.round) {
-                var o = Math.min(u.width, u.height), a = document.createElementNS("http://www.w3.org/2000/svg", "rect");
-                this._backgroundClipPath = document.createElementNS("http://www.w3.org/2000/svg", "clipPath"), this._backgroundClipPath.setAttribute("id", "clip-path-background-color"), this._defs.appendChild(this._backgroundClipPath), a.setAttribute("x", String((u.width - o) / 2)), a.setAttribute("y", String((u.height - o) / 2)), a.setAttribute("width", String(o)), a.setAttribute("height", String(o)), a.setAttribute("rx", String(o / 2 * u.backgroundOptions.round)), this._backgroundClipPath.appendChild(a);
+                var n = Math.min(u.width, u.height), a = document.createElementNS("http://www.w3.org/2000/svg", "rect");
+                this._backgroundClipPath = document.createElementNS("http://www.w3.org/2000/svg", "clipPath"), this._backgroundClipPath.setAttribute("id", "clip-path-background-color"), this._defs.appendChild(this._backgroundClipPath), a.setAttribute("x", String((u.width - n) / 2)), a.setAttribute("y", String((u.height - n) / 2)), a.setAttribute("width", String(n)), a.setAttribute("height", String(n)), a.setAttribute("rx", String(n / 2 * u.backgroundOptions.round)), this._backgroundClipPath.appendChild(a);
               }
             }
           }, d.prototype.drawDots = function(t) {
@@ -1227,11 +1227,11 @@ var Bt = { exports: {} };
             var u = this._options, s = this._qr.getModuleCount();
             if (s > u.width || s > u.height)
               throw "The canvas is too small.";
-            var p = Math.min(u.width, u.height) - 2 * u.margin, o = u.shape === dt ? p / Math.sqrt(2) : p, a = Math.floor(o / s), n = Math.floor((u.width - s * a) / 2), l = Math.floor((u.height - s * a) / 2), h = new ut({ svg: this._element, type: u.dotsOptions.type });
+            var p = Math.min(u.width, u.height) - 2 * u.margin, n = u.shape === dt ? p / Math.sqrt(2) : p, a = Math.floor(n / s), o = Math.floor((u.width - s * a) / 2), l = Math.floor((u.height - s * a) / 2), h = new ut({ svg: this._element, type: u.dotsOptions.type });
             this._dotsClipPath = document.createElementNS("http://www.w3.org/2000/svg", "clipPath"), this._dotsClipPath.setAttribute("id", "clip-path-dot-color"), this._defs.appendChild(this._dotsClipPath), this._createColor({ options: (r = u.dotsOptions) === null || r === void 0 ? void 0 : r.gradient, color: u.dotsOptions.color, additionalRotation: 0, x: 0, y: 0, height: u.height, width: u.width, name: "dot-color" });
             for (var y = function(G) {
               for (var N = function(F) {
-                return t && !t(G, F) ? "continue" : !((e = x._qr) === null || e === void 0) && e.isDark(G, F) ? (h.draw(n + G * a, l + F * a, a, function(Y, J) {
+                return t && !t(G, F) ? "continue" : !((e = x._qr) === null || e === void 0) && e.isDark(G, F) ? (h.draw(o + G * a, l + F * a, a, function(Y, J) {
                   return !(G + Y < 0 || F + J < 0 || G + Y >= s || F + J >= s) && !(t && !t(G + Y, F + J)) && !!i._qr && i._qr.isDark(G + Y, F + J);
                 }), void (h._element && x._dotsClipPath && x._dotsClipPath.appendChild(h._element))) : "continue";
               }, X = 0; X < s; X++)
@@ -1239,7 +1239,7 @@ var Bt = { exports: {} };
             }, x = this, g = 0; g < s; g++)
               y(g);
             if (u.shape === dt) {
-              var k = Math.floor((p / a - s) / 2), O = s + 2 * k, z = n - k * a, j = l - k * a, D = [], R = Math.floor(O / 2);
+              var k = Math.floor((p / a - s) / 2), O = s + 2 * k, B = o - k * a, j = l - k * a, D = [], R = Math.floor(O / 2);
               for (g = 0; g < O; g++) {
                 D[g] = [];
                 for (var q = 0; q < O; q++)
@@ -1249,13 +1249,13 @@ var Bt = { exports: {} };
                 for (var N = function(F) {
                   if (!D[G][F])
                     return "continue";
-                  h.draw(z + G * a, j + F * a, a, function(Y, J) {
+                  h.draw(B + G * a, j + F * a, a, function(Y, J) {
                     var K;
                     return !!(!((K = D[G + Y]) === null || K === void 0) && K[F + J]);
-                  }), h._element && ot._dotsClipPath && ot._dotsClipPath.appendChild(h._element);
+                  }), h._element && nt._dotsClipPath && nt._dotsClipPath.appendChild(h._element);
                 }, X = 0; X < O; X++)
                   N(X);
-              }, ot = this;
+              }, nt = this;
               for (g = 0; g < O; g++)
                 L(g);
             }
@@ -1266,16 +1266,16 @@ var Bt = { exports: {} };
             var r = this._element, e = this._options;
             if (!r)
               throw "Element code is not defined";
-            var i = this._qr.getModuleCount(), u = Math.min(e.width, e.height) - 2 * e.margin, s = e.shape === dt ? u / Math.sqrt(2) : u, p = Math.floor(s / i), o = 7 * p, a = 3 * p, n = Math.floor((e.width - i * p) / 2), l = Math.floor((e.height - i * p) / 2);
+            var i = this._qr.getModuleCount(), u = Math.min(e.width, e.height) - 2 * e.margin, s = e.shape === dt ? u / Math.sqrt(2) : u, p = Math.floor(s / i), n = 7 * p, a = 3 * p, o = Math.floor((e.width - i * p) / 2), l = Math.floor((e.height - i * p) / 2);
             [[0, 0, 0], [1, 0, Math.PI / 2], [0, 1, -Math.PI / 2]].forEach(function(h) {
-              var y, x, g, k, O, z, j, D, R, q, L, ot, G = h[0], N = h[1], X = h[2], F = n + G * p * (i - 7), Y = l + N * p * (i - 7), J = t._dotsClipPath, K = t._dotsClipPath;
-              if ((!((y = e.cornersSquareOptions) === null || y === void 0) && y.gradient || !((x = e.cornersSquareOptions) === null || x === void 0) && x.color) && ((J = document.createElementNS("http://www.w3.org/2000/svg", "clipPath")).setAttribute("id", "clip-path-corners-square-color-" + G + "-" + N), t._defs.appendChild(J), t._cornersSquareClipPath = t._cornersDotClipPath = K = J, t._createColor({ options: (g = e.cornersSquareOptions) === null || g === void 0 ? void 0 : g.gradient, color: (k = e.cornersSquareOptions) === null || k === void 0 ? void 0 : k.color, additionalRotation: X, x: F, y: Y, height: o, width: o, name: "corners-square-color-" + G + "-" + N })), (O = e.cornersSquareOptions) === null || O === void 0 ? void 0 : O.type) {
+              var y, x, g, k, O, B, j, D, R, q, L, nt, G = h[0], N = h[1], X = h[2], F = o + G * p * (i - 7), Y = l + N * p * (i - 7), J = t._dotsClipPath, K = t._dotsClipPath;
+              if ((!((y = e.cornersSquareOptions) === null || y === void 0) && y.gradient || !((x = e.cornersSquareOptions) === null || x === void 0) && x.color) && ((J = document.createElementNS("http://www.w3.org/2000/svg", "clipPath")).setAttribute("id", "clip-path-corners-square-color-" + G + "-" + N), t._defs.appendChild(J), t._cornersSquareClipPath = t._cornersDotClipPath = K = J, t._createColor({ options: (g = e.cornersSquareOptions) === null || g === void 0 ? void 0 : g.gradient, color: (k = e.cornersSquareOptions) === null || k === void 0 ? void 0 : k.color, additionalRotation: X, x: F, y: Y, height: n, width: n, name: "corners-square-color-" + G + "-" + N })), (O = e.cornersSquareOptions) === null || O === void 0 ? void 0 : O.type) {
                 var rt = new st({ svg: t._element, type: e.cornersSquareOptions.type });
-                rt.draw(F, Y, o, X), rt._element && J && J.appendChild(rt._element);
+                rt.draw(F, Y, n, X), rt._element && J && J.appendChild(rt._element);
               } else
                 for (var pt = new ut({ svg: t._element, type: e.dotsOptions.type }), It = function(ht) {
                   for (var At = function(vt) {
-                    if (!(!((z = lt[ht]) === null || z === void 0) && z[vt]))
+                    if (!(!((B = lt[ht]) === null || B === void 0) && B[vt]))
                       return "continue";
                     pt.draw(F + ht * p, Y + vt * p, p, function(Pt, Dt) {
                       var mt;
@@ -1292,7 +1292,7 @@ var Bt = { exports: {} };
                 pt = new ut({ svg: t._element, type: e.dotsOptions.type });
                 var Rt = function(ht) {
                   for (var At = function(vt) {
-                    if (!(!((ot = ct[ht]) === null || ot === void 0) && ot[vt]))
+                    if (!(!((nt = ct[ht]) === null || nt === void 0) && nt[vt]))
                       return "continue";
                     pt.draw(F + ht * p, Y + vt * p, p, function(Pt, Dt) {
                       var mt;
@@ -1318,25 +1318,25 @@ var Bt = { exports: {} };
           }, d.prototype.drawImage = function(t) {
             var r = t.width, e = t.height, i = t.count, u = t.dotSize;
             return yt(this, void 0, void 0, function() {
-              var s, p, o, a, n, l, h, y, x;
+              var s, p, n, a, o, l, h, y, x;
               return _t(this, function(g) {
                 switch (g.label) {
                   case 0:
-                    return s = this._options, p = Math.floor((s.width - i * u) / 2), o = Math.floor((s.height - i * u) / 2), a = p + s.imageOptions.margin + (i * u - r) / 2, n = o + s.imageOptions.margin + (i * u - e) / 2, l = r - 2 * s.imageOptions.margin, h = e - 2 * s.imageOptions.margin, (y = document.createElementNS("http://www.w3.org/2000/svg", "image")).setAttribute("x", String(a)), y.setAttribute("y", String(n)), y.setAttribute("width", l + "px"), y.setAttribute("height", h + "px"), [4, nt(s.image || "")];
+                    return s = this._options, p = Math.floor((s.width - i * u) / 2), n = Math.floor((s.height - i * u) / 2), a = p + s.imageOptions.margin + (i * u - r) / 2, o = n + s.imageOptions.margin + (i * u - e) / 2, l = r - 2 * s.imageOptions.margin, h = e - 2 * s.imageOptions.margin, (y = document.createElementNS("http://www.w3.org/2000/svg", "image")).setAttribute("x", String(a)), y.setAttribute("y", String(o)), y.setAttribute("width", l + "px"), y.setAttribute("height", h + "px"), [4, ot(s.image || "")];
                   case 1:
                     return x = g.sent(), y.setAttribute("href", x || ""), this._element.appendChild(y), [2];
                 }
               });
             });
           }, d.prototype._createColor = function(t) {
-            var r = t.options, e = t.color, i = t.additionalRotation, u = t.x, s = t.y, p = t.height, o = t.width, a = t.name, n = o > p ? o : p, l = document.createElementNS("http://www.w3.org/2000/svg", "rect");
-            if (l.setAttribute("x", String(u)), l.setAttribute("y", String(s)), l.setAttribute("height", String(p)), l.setAttribute("width", String(o)), l.setAttribute("clip-path", "url('#clip-path-" + a + "')"), r) {
+            var r = t.options, e = t.color, i = t.additionalRotation, u = t.x, s = t.y, p = t.height, n = t.width, a = t.name, o = n > p ? n : p, l = document.createElementNS("http://www.w3.org/2000/svg", "rect");
+            if (l.setAttribute("x", String(u)), l.setAttribute("y", String(s)), l.setAttribute("height", String(p)), l.setAttribute("width", String(n)), l.setAttribute("clip-path", "url('#clip-path-" + a + "')"), r) {
               var h;
               if (r.type === "radial")
-                (h = document.createElementNS("http://www.w3.org/2000/svg", "radialGradient")).setAttribute("id", a), h.setAttribute("gradientUnits", "userSpaceOnUse"), h.setAttribute("fx", String(u + o / 2)), h.setAttribute("fy", String(s + p / 2)), h.setAttribute("cx", String(u + o / 2)), h.setAttribute("cy", String(s + p / 2)), h.setAttribute("r", String(n / 2));
+                (h = document.createElementNS("http://www.w3.org/2000/svg", "radialGradient")).setAttribute("id", a), h.setAttribute("gradientUnits", "userSpaceOnUse"), h.setAttribute("fx", String(u + n / 2)), h.setAttribute("fy", String(s + p / 2)), h.setAttribute("cx", String(u + n / 2)), h.setAttribute("cy", String(s + p / 2)), h.setAttribute("r", String(o / 2));
               else {
-                var y = ((r.rotation || 0) + i) % (2 * Math.PI), x = (y + 2 * Math.PI) % (2 * Math.PI), g = u + o / 2, k = s + p / 2, O = u + o / 2, z = s + p / 2;
-                x >= 0 && x <= 0.25 * Math.PI || x > 1.75 * Math.PI && x <= 2 * Math.PI ? (g -= o / 2, k -= p / 2 * Math.tan(y), O += o / 2, z += p / 2 * Math.tan(y)) : x > 0.25 * Math.PI && x <= 0.75 * Math.PI ? (k -= p / 2, g -= o / 2 / Math.tan(y), z += p / 2, O += o / 2 / Math.tan(y)) : x > 0.75 * Math.PI && x <= 1.25 * Math.PI ? (g += o / 2, k += p / 2 * Math.tan(y), O -= o / 2, z -= p / 2 * Math.tan(y)) : x > 1.25 * Math.PI && x <= 1.75 * Math.PI && (k += p / 2, g += o / 2 / Math.tan(y), z -= p / 2, O -= o / 2 / Math.tan(y)), (h = document.createElementNS("http://www.w3.org/2000/svg", "linearGradient")).setAttribute("id", a), h.setAttribute("gradientUnits", "userSpaceOnUse"), h.setAttribute("x1", String(Math.round(g))), h.setAttribute("y1", String(Math.round(k))), h.setAttribute("x2", String(Math.round(O))), h.setAttribute("y2", String(Math.round(z)));
+                var y = ((r.rotation || 0) + i) % (2 * Math.PI), x = (y + 2 * Math.PI) % (2 * Math.PI), g = u + n / 2, k = s + p / 2, O = u + n / 2, B = s + p / 2;
+                x >= 0 && x <= 0.25 * Math.PI || x > 1.75 * Math.PI && x <= 2 * Math.PI ? (g -= n / 2, k -= p / 2 * Math.tan(y), O += n / 2, B += p / 2 * Math.tan(y)) : x > 0.25 * Math.PI && x <= 0.75 * Math.PI ? (k -= p / 2, g -= n / 2 / Math.tan(y), B += p / 2, O += n / 2 / Math.tan(y)) : x > 0.75 * Math.PI && x <= 1.25 * Math.PI ? (g += n / 2, k += p / 2 * Math.tan(y), O -= n / 2, B -= p / 2 * Math.tan(y)) : x > 1.25 * Math.PI && x <= 1.75 * Math.PI && (k += p / 2, g += n / 2 / Math.tan(y), B -= p / 2, O -= n / 2 / Math.tan(y)), (h = document.createElementNS("http://www.w3.org/2000/svg", "linearGradient")).setAttribute("id", a), h.setAttribute("gradientUnits", "userSpaceOnUse"), h.setAttribute("x1", String(Math.round(g))), h.setAttribute("y1", String(Math.round(k))), h.setAttribute("x2", String(Math.round(O))), h.setAttribute("y2", String(Math.round(B)));
               }
               r.colorStops.forEach(function(j) {
                 var D = j.offset, R = j.color, q = document.createElementNS("http://www.w3.org/2000/svg", "stop");
@@ -1374,25 +1374,25 @@ var Bt = { exports: {} };
           return new (r || (r = Promise))(function(i, u) {
             function s(a) {
               try {
-                o(e.next(a));
-              } catch (n) {
-                u(n);
+                n(e.next(a));
+              } catch (o) {
+                u(o);
               }
             }
             function p(a) {
               try {
-                o(e.throw(a));
-              } catch (n) {
-                u(n);
+                n(e.throw(a));
+              } catch (o) {
+                u(o);
               }
             }
-            function o(a) {
-              var n;
-              a.done ? i(a.value) : (n = a.value, n instanceof r ? n : new r(function(l) {
-                l(n);
+            function n(a) {
+              var o;
+              a.done ? i(a.value) : (o = a.value, o instanceof r ? o : new r(function(l) {
+                l(o);
               })).then(s, p);
             }
-            o((e = e.apply(d, t || [])).next());
+            n((e = e.apply(d, t || [])).next());
           });
         }, S = function(d, t) {
           var r, e, i, u, s = { label: 0, sent: function() {
@@ -1403,58 +1403,58 @@ var Bt = { exports: {} };
           return u = { next: p(0), throw: p(1), return: p(2) }, typeof Symbol == "function" && (u[Symbol.iterator] = function() {
             return this;
           }), u;
-          function p(o) {
+          function p(n) {
             return function(a) {
-              return function(n) {
+              return function(o) {
                 if (r)
                   throw new TypeError("Generator is already executing.");
                 for (; s; )
                   try {
-                    if (r = 1, e && (i = 2 & n[0] ? e.return : n[0] ? e.throw || ((i = e.return) && i.call(e), 0) : e.next) && !(i = i.call(e, n[1])).done)
+                    if (r = 1, e && (i = 2 & o[0] ? e.return : o[0] ? e.throw || ((i = e.return) && i.call(e), 0) : e.next) && !(i = i.call(e, o[1])).done)
                       return i;
-                    switch (e = 0, i && (n = [2 & n[0], i.value]), n[0]) {
+                    switch (e = 0, i && (o = [2 & o[0], i.value]), o[0]) {
                       case 0:
                       case 1:
-                        i = n;
+                        i = o;
                         break;
                       case 4:
-                        return s.label++, { value: n[1], done: !1 };
+                        return s.label++, { value: o[1], done: !1 };
                       case 5:
-                        s.label++, e = n[1], n = [0];
+                        s.label++, e = o[1], o = [0];
                         continue;
                       case 7:
-                        n = s.ops.pop(), s.trys.pop();
+                        o = s.ops.pop(), s.trys.pop();
                         continue;
                       default:
-                        if (!((i = (i = s.trys).length > 0 && i[i.length - 1]) || n[0] !== 6 && n[0] !== 2)) {
+                        if (!((i = (i = s.trys).length > 0 && i[i.length - 1]) || o[0] !== 6 && o[0] !== 2)) {
                           s = 0;
                           continue;
                         }
-                        if (n[0] === 3 && (!i || n[1] > i[0] && n[1] < i[3])) {
-                          s.label = n[1];
+                        if (o[0] === 3 && (!i || o[1] > i[0] && o[1] < i[3])) {
+                          s.label = o[1];
                           break;
                         }
-                        if (n[0] === 6 && s.label < i[1]) {
-                          s.label = i[1], i = n;
+                        if (o[0] === 6 && s.label < i[1]) {
+                          s.label = i[1], i = o;
                           break;
                         }
                         if (i && s.label < i[2]) {
-                          s.label = i[2], s.ops.push(n);
+                          s.label = i[2], s.ops.push(o);
                           break;
                         }
                         i[2] && s.ops.pop(), s.trys.pop();
                         continue;
                     }
-                    n = t.call(d, s);
+                    o = t.call(d, s);
                   } catch (l) {
-                    n = [6, l], e = 0;
+                    o = [6, l], e = 0;
                   } finally {
                     r = i = 0;
                   }
-                if (5 & n[0])
-                  throw n[1];
-                return { value: n[0] ? n[1] : void 0, done: !0 };
-              }([o, a]);
+                if (5 & o[0])
+                  throw o[1];
+                return { value: o[0] ? o[1] : void 0, done: !0 };
+              }([n, a]);
             };
           }
         };
@@ -1480,8 +1480,8 @@ var Bt = { exports: {} };
                 var e = r._svg, i = new XMLSerializer().serializeToString(e), u = "data:image/svg+xml;base64," + btoa(i), s = new Image();
                 return new Promise(function(p) {
                   s.onload = function() {
-                    var o, a;
-                    (a = (o = r._canvas) === null || o === void 0 ? void 0 : o.getContext("2d")) === null || a === void 0 || a.drawImage(s, 0, 0), p();
+                    var n, a;
+                    (a = (n = r._canvas) === null || n === void 0 ? void 0 : n.getContext("2d")) === null || a === void 0 || a.drawImage(s, 0, 0), p();
                   }, s.src = u;
                 });
               }
@@ -1576,9 +1576,9 @@ var Bt = { exports: {} };
       }, A.o = (C, P) => Object.prototype.hasOwnProperty.call(C, P), A(676);
     })().default;
   });
-})(Bt);
-var Nt = Bt.exports;
-const Tt = /* @__PURE__ */ Lt(Nt), jt = `.root>div{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;margin:auto;-webkit-box-align:center;-ms-flex-align:center;align-items:center;height:100vh;width:100vw}.root>div>div{margin:auto;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;text-align:center;width:calc(100% - 2em);max-width:calc(350px + 1em);-webkit-box-flex:1;-ms-flex:1;flex:1}label{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}button,input[type=url]{padding:5px;margin-bottom:2em;width:calc(100% - 1em);white-space:nowrap}button{margin-top:2em}#QRContainer canvas{width:300px;margin-bottom:2em}#ThemePopover{position:fixed;margin:0;width:120px;top:40px}p-top-nav{position:fixed}p-top-nav-item button{border:0;-webkit-appearance:none;-moz-appearance:none;appearance:none;background:transparent;font:inherit;margin:0}
+})(zt);
+var Nt = zt.exports;
+const Tt = /* @__PURE__ */ Lt(Nt), jt = `[popover]{position:fixed;z-index:2147483647;top:0;right:0;bottom:0;left:0;padding:.25em;width:-webkit-fit-content;width:-moz-fit-content;width:fit-content;height:-webkit-fit-content;height:-moz-fit-content;height:fit-content;border-width:medium;border-width:initial;border-color:currentColor;border-color:initial;-o-border-image:none;border-image:none;-o-border-image:initial;border-image:initial;border-style:solid;background-color:canvas;color:canvastext;overflow:auto;margin:auto}[popover]:not(.\\:popover-open){display:none}dialog[popover][open]{display:revert}[anchor].\\:popover-open{top:auto;right:auto;bottom:auto;left:auto}@supports selector([popover]:open){[popover]:not(.\\:popover-open):not(dialog[open]){display:revert}[anchor]:open{top:auto;right:auto;bottom:auto;left:auto}}@supports selector([popover]:popover-open){[popover]:not(.\\:popover-open):not(dialog[open]){display:revert}[anchor]:popover-open{top:auto;right:auto;bottom:auto;left:auto}}@supports not (background-color: canvas){[popover]{background-color:#fff;color:#000}}@supports (width: -moz-fit-content){[popover]{width:-moz-fit-content;height:-moz-fit-content}}@supports not (inset: 0){[popover]{top:0;left:0;right:0;bottom:0}}.root>div{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;margin:auto;-webkit-box-align:center;-ms-flex-align:center;align-items:center;height:100vh;width:100vw}.root>div>div{margin:auto;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;text-align:center;width:calc(100% - 2em);max-width:calc(350px + 1em);-webkit-box-flex:1;-ms-flex:1;flex:1}label{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}button,input[type=url]{padding:5px;margin-bottom:2em;width:calc(100% - 1em);white-space:nowrap}button{margin-top:2em}#QRContainer canvas{width:300px;margin-bottom:2em}#ThemePopover{position:fixed;margin:0;width:120px;top:40px}p-top-nav{position:fixed}p-top-nav-item button{border:0;-webkit-appearance:none;-moz-appearance:none;appearance:none;background:transparent;font:inherit;margin:0}
 `;
 class Ft {
   async getThemes() {
@@ -1594,10 +1594,10 @@ class Ft {
     return await Promise.all(A).catch((C) => C);
   }
 }
-var $t = Object.defineProperty, Qt = Object.getOwnPropertyDescriptor, zt = (E, B, T, I) => {
-  for (var A = I > 1 ? void 0 : I ? Qt(B, T) : B, C = E.length - 1, P; C >= 0; C--)
-    (P = E[C]) && (A = (I ? P(B, T, A) : P(A)) || A);
-  return I && A && $t(B, T, A), A;
+var $t = Object.defineProperty, Qt = Object.getOwnPropertyDescriptor, Bt = (E, z, T, I) => {
+  for (var A = I > 1 ? void 0 : I ? Qt(z, T) : z, C = E.length - 1, P; C >= 0; C--)
+    (P = E[C]) && (A = (I ? P(z, T, A) : P(A)) || A);
+  return I && A && $t(z, T, A), A;
 };
 let Ot = class extends CustomElement {
   constructor(E) {
@@ -1669,17 +1669,17 @@ let Ot = class extends CustomElement {
               accept: { "application/svg+xml": [".svg"] }
             }
           ]
-        }, Z = await window.showSaveFilePicker(H).catch((nt) => nt);
+        }, Z = await window.showSaveFilePicker(H).catch((ot) => ot);
         if (Z instanceof Error)
           return;
         const tt = await Z.createWritable();
         await tt.write(V), await tt.close();
       }
     };
-    const B = this.templateFromString(
+    const z = this.templateFromString(
       `<style>${jt}</style><div class="root"></div>`
     );
-    this.qrCode = new Tt(this.defaultStyling), (I = this.shadowRoot) == null || I.appendChild(B);
+    this.qrCode = new Tt(this.defaultStyling), (I = this.shadowRoot) == null || I.appendChild(z);
     const T = (A = this.shadowRoot) == null ? void 0 : A.querySelector(".root");
     T && this.createProjector(T, this.render), this.initThemes();
   }
@@ -1693,24 +1693,24 @@ let Ot = class extends CustomElement {
   set theme(E) {
     if (!this.themes.find((T) => T.name === E))
       return;
-    const B = this.themes.find((T) => T.name === E);
-    this.url = B.url, this.qrCode && (this.qrCode.update(B.options), this.qrCode.update({ data: this.url }));
+    const z = this.themes.find((T) => T.name === E);
+    this.url = z.url, this.qrCode && (this.qrCode.update(z.options), this.qrCode.update({ data: this.url }));
   }
 };
-zt([
+Bt([
   RenderOnSet
 ], Ot.prototype, "themes", 2);
-Ot = zt([
+Ot = Bt([
   CustomElementConfig({
     tagName: "p-qr-code-generator"
   })
 ], Ot);
 const Ht = `dialog::-ms-backdrop{background:rgba(0,0,0,.5);background:var(--backdrop-color, rgba(0, 0, 0, .5));-webkit-backdrop-filter:blur(1px);backdrop-filter:blur(1px);-webkit-backdrop-filter:var(--backdrop-filter, blur(1px));backdrop-filter:var(--backdrop-filter, blur(1px))}dialog::backdrop{background:rgba(0,0,0,.5);background:var(--backdrop-color, rgba(0, 0, 0, .5));-webkit-backdrop-filter:blur(1px);backdrop-filter:blur(1px);-webkit-backdrop-filter:var(--backdrop-filter, blur(1px));backdrop-filter:var(--backdrop-filter, blur(1px))}dialog[open]{background:Canvas;background:var(--dialog-background, Canvas);color:CanvasText;color:var(--dialog-color, CanvasText);border:1px solid ButtonBorder;border:1px solid var(--dialog-border-color, ButtonBorder);border-radius:0;border-radius:var(--dialog-border-radius, 0);-webkit-box-shadow:2px 2px 5px hsla(220,3%,23%,.3);box-shadow:2px 2px 5px #393a3c4d;-webkit-box-shadow:var(--dialog-box-shadow, 2px 2px 5px hsla(220, 3%, 23%, .3));box-shadow:var(--dialog-box-shadow, 2px 2px 5px hsla(220, 3%, 23%, .3));width:480px;max-width:calc(100vw - 40px);outline:none}.dialog-content{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;gap:var(--gap-sm);margin:var(--gap-xs)}.dialog-header-container ::slotted(*){font:var(--dialog-header-font);margin:0}.dialog-body-container ::slotted(*){font:var(--dialog-body-font);margin:0}.dialog-footer-container ::slotted(*){font:var(--dialog-footer-font);margin:0}.dialog-footer-container slot{display:-webkit-box;display:-ms-flexbox;display:flex;gap:var(--gap-sm)}.dialog-title{font:var(--dialog-header-font);margin:0}
 `;
-async function Ut(E, B) {
-  return B || (B = document), new Promise((T, I) => {
+async function Ut(E, z) {
+  return z || (z = document), new Promise((T, I) => {
     const A = setInterval(() => {
-      const C = B == null ? void 0 : B.querySelector(E);
+      const C = z == null ? void 0 : z.querySelector(E);
       C && (clearInterval(A), T(C));
     }, 100);
     setTimeout(() => {
@@ -1718,10 +1718,10 @@ async function Ut(E, B) {
     }, 1e4);
   });
 }
-var Gt = Object.defineProperty, Xt = Object.getOwnPropertyDescriptor, Yt = (E, B, T, I) => {
-  for (var A = I > 1 ? void 0 : I ? Xt(B, T) : B, C = E.length - 1, P; C >= 0; C--)
-    (P = E[C]) && (A = (I ? P(B, T, A) : P(A)) || A);
-  return I && A && Gt(B, T, A), A;
+var Gt = Object.defineProperty, Xt = Object.getOwnPropertyDescriptor, Yt = (E, z, T, I) => {
+  for (var A = I > 1 ? void 0 : I ? Xt(z, T) : z, C = E.length - 1, P; C >= 0; C--)
+    (P = E[C]) && (A = (I ? P(z, T, A) : P(A)) || A);
+  return I && A && Gt(z, T, A), A;
 };
 let St = class extends CustomElement {
   constructor() {
@@ -1732,8 +1732,8 @@ let St = class extends CustomElement {
       !0
     );
     (T = this.shadowRoot) == null || T.appendChild(E);
-    const B = (I = this.shadowRoot) == null ? void 0 : I.querySelector("div");
-    B && this.createProjector(B, this.render);
+    const z = (I = this.shadowRoot) == null ? void 0 : I.querySelector("div");
+    z && this.createProjector(z, this.render);
   }
   static get observedAttributes() {
     return ["caption"];
@@ -1744,17 +1744,17 @@ let St = class extends CustomElement {
   close() {
     this.dialogElement.then((E) => E.close());
   }
-  static createPromptDialog(E, B, T) {
+  static createPromptDialog(E, z, T) {
     const I = document.createElement("p-dialog"), A = Maquette.createProjector(), C = document.createElement("header"), P = document.createElement("main");
-    return C.textContent = E, C.slot = "header", A.merge(P, () => B), T.forEach(($) => I.appendChild($)), I.appendChild(C), I.appendChild(P), I;
+    return C.textContent = E, C.slot = "header", A.merge(P, () => z), T.forEach(($) => I.appendChild($)), I.appendChild(C), I.appendChild(P), I;
   }
-  static stringsToButtons(E, B) {
+  static stringsToButtons(E, z) {
     return E.map((T, I) => {
       const A = document.createElement("button");
-      return A.textContent = T, A.slot = "footer", A.classList.add("button"), A.classList.add(I === 0 ? "primary-button" : "secondary-button"), A.addEventListener("click", B), A;
+      return A.textContent = T, A.slot = "footer", A.classList.add("button"), A.classList.add(I === 0 ? "primary-button" : "secondary-button"), A.addEventListener("click", z), A;
     });
   }
-  static async prompt(E, B, T = ["OK"]) {
+  static async prompt(E, z, T = ["OK"]) {
     let I;
     const A = new Promise((V) => {
       I = V;
@@ -1767,7 +1767,7 @@ let St = class extends CustomElement {
       C
     ), $ = St.createPromptDialog(
       E,
-      B,
+      z,
       P
     );
     document.body.appendChild($);
@@ -1788,21 +1788,21 @@ St = Yt([
 ], St);
 const Wt = `:host{display:block;width:100%}:host #List{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-box-align:center;-ms-flex-align:center;align-items:center;width:100%;gap:1em}:host #List ::slotted(:not([slot])){vertical-align:top}
 `;
-var Jt = Object.defineProperty, Kt = Object.getOwnPropertyDescriptor, Zt = (E, B, T, I) => {
-  for (var A = I > 1 ? void 0 : I ? Kt(B, T) : B, C = E.length - 1, P; C >= 0; C--)
-    (P = E[C]) && (A = (I ? P(B, T, A) : P(A)) || A);
-  return I && A && Jt(B, T, A), A;
+var Jt = Object.defineProperty, Kt = Object.getOwnPropertyDescriptor, Zt = (E, z, T, I) => {
+  for (var A = I > 1 ? void 0 : I ? Kt(z, T) : z, C = E.length - 1, P; C >= 0; C--)
+    (P = E[C]) && (A = (I ? P(z, T, A) : P(A)) || A);
+  return I && A && Jt(z, T, A), A;
 };
 let qt = class extends CustomElement {
   constructor() {
-    var B;
+    var z;
     super();
     const E = this.templateFromString(
       `<style>${Wt}</style>
       <div id="List"><slot></slot></div>`,
       !0
     );
-    (B = this.shadowRoot) == null || B.appendChild(E);
+    (z = this.shadowRoot) == null || z.appendChild(E);
   }
 };
 qt = Zt([
@@ -1812,21 +1812,21 @@ qt = Zt([
 ], qt);
 const Vt = `:host{font-weight:400}
 `;
-var te = Object.defineProperty, ee = Object.getOwnPropertyDescriptor, re = (E, B, T, I) => {
-  for (var A = I > 1 ? void 0 : I ? ee(B, T) : B, C = E.length - 1, P; C >= 0; C--)
-    (P = E[C]) && (A = (I ? P(B, T, A) : P(A)) || A);
-  return I && A && te(B, T, A), A;
+var te = Object.defineProperty, ee = Object.getOwnPropertyDescriptor, re = (E, z, T, I) => {
+  for (var A = I > 1 ? void 0 : I ? ee(z, T) : z, C = E.length - 1, P; C >= 0; C--)
+    (P = E[C]) && (A = (I ? P(z, T, A) : P(A)) || A);
+  return I && A && te(z, T, A), A;
 };
 let Et = class extends CustomElement {
   constructor() {
-    var B;
+    var z;
     super();
     const E = this.templateFromString(
       `<style>${Vt}</style>
       <div><slot></slot></div>`,
       !0
     );
-    (B = this.shadowRoot) == null || B.appendChild(E);
+    (z = this.shadowRoot) == null || z.appendChild(E);
   }
 };
 Et = re([
@@ -1836,9 +1836,9 @@ Et = re([
 ], Et);
 let Mt;
 window.addEventListener("beforeinstallprompt", (E) => {
-  E.preventDefault(), Mt = E, ne();
+  E.preventDefault(), Mt = E, oe();
 });
-async function ne() {
+async function oe() {
   if (await customElements.whenDefined("p-dialog"), await (await customElements.get(
     "p-dialog"
   )).prompt(
