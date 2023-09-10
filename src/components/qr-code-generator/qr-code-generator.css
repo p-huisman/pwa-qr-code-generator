@@ -184,4 +184,5 @@ p-top-nav-item button {
   border-radius: var(--border-radius-xs);
   padding: 0.8em 1.6em;
   width: calc(100% - 3.8em);
+  font-size: 16px;
 }
