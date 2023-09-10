@@ -1,16 +1,16 @@
-:host{
-    display: block;
-    width: 100%;
+:host {
+  display: block;
+  width: 100%;
 }
 
 :host #List {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    width: 100%;
-    gap: 1em;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  gap: 1em;
 }
 
 :host #List ::slotted(:not([slot])) {
-    vertical-align: top;
+  vertical-align: top;
 }
