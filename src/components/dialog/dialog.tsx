@@ -59,8 +59,10 @@ export class PDialogElement extends CustomElement {
       const button = document.createElement("button");
       button.textContent = buttonText;
       button.slot = "footer";
-      button.classList.add("button");
-      button.classList.add(index === 0 ? "primary-button" : "secondary-button");
+      button.setAttribute(
+        "part",
+        index === 0 ? "button primary-button" : "button"
+      );
       button.addEventListener("click", eventHandler);
       return button;
     });

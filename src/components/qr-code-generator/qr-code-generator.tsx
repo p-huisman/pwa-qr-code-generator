@@ -72,6 +72,7 @@ export class PQrCodeGeneratorElement extends CustomElement {
             <div id="ThemePopover" popover="auto">
               {this.themes.map(t => (
                 <button
+                  part="button"
                   onclick={this.onSelectTheme}
                   key={`ThemeId${t.name}`}
                   data-name={t.name}
@@ -88,13 +89,17 @@ export class PQrCodeGeneratorElement extends CustomElement {
         <div>
           <label for="UrlInput">URL</label>
           <input
+            part="text-input"
             id="UrlInput"
             type="url"
             value={this.url}
             oninput={this.onDataChange}
           />
           <div id="QRContainer" afterCreate={this.onCreateQRElement}></div>
-          <button class="primary-button" onclick={this.onDownloadButtonClick}>
+          <button
+            part="button primary-button"
+            onclick={this.onDownloadButtonClick}
+          >
             Download QR code
           </button>
         </div>
