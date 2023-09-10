@@ -147,19 +147,33 @@ export class PQrCodeGeneratorElement extends CustomElement {
   };
 
   private onDownloadButtonClick = async () => {
-    const defaultPath = this.url
+    let defaultPath = this.url;
+    if (this.url.indexOf("//") > 0) {
+      defaultPath = this.url.split("//")[1];
+    }
+    defaultPath = this.url
       .split("//")[1]
+      .replaceAll(":", "-")
       .replaceAll("/", "-")
       .replaceAll("?", "-")
       .replaceAll(".", "-")
       .replaceAll("/", "-");
+
     const svg = this.qrCode?._svg?.outerHTML;
     if (svg) {
       const f = svg.replace(
         "<svg ",
         '<svg xmlns="http://www.w3.org/2000/svg" '
       );
-
+      if (!(window as any).showSaveFilePicker) {
+        const blob = new Blob([f], { type: "image/svg+xml" });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = defaultPath;
+        a.click();
+        return;
+      }
       const opts = {
         suggestedName: defaultPath,
         types: [

@@ -4,6 +4,17 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="images/icon.svg" />
     <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@oddbird/popover-polyfill@latest/dist/popover.css"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/@oddbird/popover-polyfill@latest"
+      crossorigin="anonymous"
+      defer
+    ></script>
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="manifest" href="manifest.json" />
     <title>QR Code Generator</title>
@@ -13,10 +24,7 @@
     <div class="container">
       <p-qr-code-generator></p-qr-code-generator>
     </div>
-    <script
-      type
-      src="https://unpkg.com/@oddbird/popover-polyfill@0.2.2/dist/popover.min.js"
-    ></script>
+
     <script
       defer
       src="https://unpkg.com/p-elements-core@1.2.2/dist/p-elements-core.js"

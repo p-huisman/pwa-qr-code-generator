@@ -126,4 +126,5 @@ p-top-nav-item button {
   background: transparent;
   font: inherit;
   margin: 0;
+  outline: none;
 }
