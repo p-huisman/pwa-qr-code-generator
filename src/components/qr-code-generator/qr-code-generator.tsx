@@ -4,6 +4,7 @@ import QRCodeStyling, { Options } from "qr-code-styling";
 import css from "./qr-code-generator.css?inline";
 
 import { ThemeService } from "../../services/theme-service";
+import { PDialogElement } from "../dialog/dialog";
 
 @CustomElementConfig({
   tagName: "p-qr-code-generator",
@@ -23,26 +24,6 @@ export class PQrCodeGeneratorElement extends CustomElement {
         mode: "Byte",
         errorCorrectionLevel: "H",
       },
-      imageOptions: {
-        hideBackgroundDots: false,
-        imageSize: 1,
-        margin: 0,
-      },
-      dotsOptions: {
-        type: "square",
-        color: "rgb(33,33,33)",
-      },
-      backgroundOptions: {
-        color: "rgba(255,255,255, 0)",
-      },
-      cornersSquareOptions: {
-        type: "square",
-        color: "#c18e61",
-      },
-      cornersDotOptions: {
-        type: "square",
-        color: "#563969",
-      },
     };
     const template = this.templateFromString(
       `<style>${css}</style><div class="root"></div>`
@@ -53,19 +34,45 @@ export class PQrCodeGeneratorElement extends CustomElement {
     if (rootElement) {
       this.createProjector(rootElement, this.render);
     }
+    this.initThemes();
+  }
+
+  @RenderOnSet
+  private themes: any[] = [];
+
+  private async initThemes() {
+    this.themes = await this.themeService.getThemes();
   }
 
   private themeService: ThemeService;
 
-  private url: string = "https://pfzw.nl";
+  private url: string = "about:blank";
+
+  private get themePopover(): any {
+    return this.shadowRoot
+      ? this.shadowRoot?.querySelector<HTMLElement>("#ThemePopover")
+      : null;
+  }
 
   private render = () => {
     return (
       <div>
         <p-top-nav>
-          <p-top-nav-item id="ThemeMenuIem" onclick={this.onMenuItemClick}>
-            Thema
+          <p-top-nav-item id="ThemeMenuItem" onclick={this.onMenuItemClick}>
+            Theme
+            <div id="ThemePopover" popover="auto">
+              {this.themes.map(t => (
+                <button
+                  onclick={this.onSelectTheme}
+                  key={`ThemeId${t.name}`}
+                  data-name={t.name}
+                >
+                  {t.name}
+                </button>
+              ))}
+            </div>
           </p-top-nav-item>
+
           <p-top-nav-item id="AboutMenuItem" onclick={this.onMenuItemClick}>
             Over
           </p-top-nav-item>
@@ -85,8 +92,39 @@ export class PQrCodeGeneratorElement extends CustomElement {
     );
   };
 
-  private onMenuItemClick = async () => {
-    this.themeService.getThemes();
+  private onMenuItemClick = async ({ target }) => {
+    switch (target.id) {
+      case "ThemeMenuItem":
+        // console.log(await this.themeService.getThemes());
+        this.themePopover?.togglePopover();
+        break;
+      case "AboutMenuItem":
+        this.openAboutDialog();
+        break;
+    }
+  };
+
+  private onSelectTheme = async ({ target }) => {
+    console.log(target.dataset.name, "!!");
+  };
+
+  private openAboutDialog = async () => {
+    await customElements.whenDefined("p-dialog");
+    const dialogCtor = (await customElements.get(
+      "p-dialog"
+    )) as typeof PDialogElement;
+
+    await dialogCtor.prompt(
+      "Over QR Code generator",
+      <div>
+        <p>Generate qr code with style.</p>
+        <p>
+          Copyright {new Date().getFullYear()} P.A. Huisman, alle rechten
+          voorbehouden
+        </p>
+      </div>,
+      ["OK"]
+    );
   };
 
   private onCreateQRElement = (n: HTMLElement) => {
