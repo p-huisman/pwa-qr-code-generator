@@ -111,9 +111,13 @@ button {
 
 #ThemePopover {
   position: fixed;
+  background-color: white;
   margin: 0;
   width: 120px;
   top: 40px;
+  border: 0;
+  border-radius: var(--dialog-border-radius, 0);
+  box-shadow: var(--dialog-box-shadow, 2px 2px 5px hsla(220, 3%, 23%, 0.3));
 }
 
 p-top-nav {
@@ -127,4 +131,5 @@ p-top-nav-item button {
   font: inherit;
   margin: 0;
   outline: none;
+  cursor: pointer;
 }
