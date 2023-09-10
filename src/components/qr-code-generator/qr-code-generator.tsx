@@ -159,7 +159,6 @@ export class PQrCodeGeneratorElement extends CustomElement {
       defaultPath = this.url.split("//")[1];
     }
     defaultPath = this.url
-      .split("//")[1]
       .replaceAll(":", "-")
       .replaceAll("/", "-")
       .replaceAll("?", "-")
