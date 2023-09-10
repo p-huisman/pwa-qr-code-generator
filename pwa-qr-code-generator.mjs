@@ -1694,7 +1694,7 @@ let Ot = class extends CustomElement {
     if (!this.themes.find((T) => T.name === E))
       return;
     const B = this.themes.find((T) => T.name === E);
-    this.qrCode && this.qrCode.update(B.options), this.url = B.url;
+    this.url = B.url, this.qrCode && (this.qrCode.update(B.options), this.qrCode.update({ data: this.url }));
   }
 };
 zt([
