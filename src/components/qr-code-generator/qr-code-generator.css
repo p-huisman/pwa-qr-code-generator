@@ -1,13 +1,13 @@
-:host {
+.root > div {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   margin: auto;
   align-items: center;
   height: 100vh;
   width: 100vw;
 }
 
-.root {
+.root > div > div {
   margin: auto;
   display: flex;
   flex-direction: column;

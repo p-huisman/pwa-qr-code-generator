@@ -1,7 +1,7 @@
 import "p-elements-core";
 
 import css from "./dialog.css?inline";
-import { waitForElement } from "./helpers/dom";
+import { waitForElement } from "../../helpers/dom";
 
 @CustomElementConfig({
   tagName: "p-dialog",

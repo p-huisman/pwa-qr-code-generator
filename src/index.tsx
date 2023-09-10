@@ -1,10 +1,13 @@
 import "./style.css";
-import "./qr-code-generator";
-import "./dialog";
+import "./components/qr-code-generator/qr-code-generator";
+import "./components/dialog/dialog";
+import "./components/top-nav/top-nav";
+import "./components/top-nav/top-nav-item";
 
-import { PDialogElement } from "./dialog";
+import { PDialogElement } from "./components/dialog/dialog";
 
 let deferredPrompt;
+
 window.addEventListener("beforeinstallprompt", e => {
   // Prevents the default mini-infobar or install dialog from appearing on mobile
   e.preventDefault();

@@ -3,6 +3,8 @@ import "p-elements-core";
 import QRCodeStyling, { Options } from "qr-code-styling";
 import css from "./qr-code-generator.css?inline";
 
+import { ThemeService } from "../../services/theme-service";
+
 @CustomElementConfig({
   tagName: "p-qr-code-generator",
 })
@@ -12,6 +14,7 @@ export class PQrCodeGeneratorElement extends CustomElement {
     private qrCode?: QRCodeStyling
   ) {
     super();
+    this.themeService = new ThemeService();
     this.defaultStyling = {
       width: 1200,
       height: 1200,
@@ -27,17 +30,18 @@ export class PQrCodeGeneratorElement extends CustomElement {
       },
       dotsOptions: {
         type: "square",
-        color: "#393a3c",
+        color: "rgb(33,33,33)",
       },
       backgroundOptions: {
-        color: "#ffffff",
+        color: "rgba(255,255,255, 0)",
       },
       cornersSquareOptions: {
-        type: "extra-rounded",
-        color: "#404b96",
+        type: "square",
+        color: "#c18e61",
       },
       cornersDotOptions: {
         type: "square",
+        color: "#563969",
       },
     };
     const template = this.templateFromString(
@@ -51,22 +55,38 @@ export class PQrCodeGeneratorElement extends CustomElement {
     }
   }
 
+  private themeService: ThemeService;
+
   private url: string = "https://pfzw.nl";
 
   private render = () => {
     return (
       <div>
-        <label for="UrlInput">URL</label>
-        <input
-          id="UrlInput"
-          type="url"
-          value={this.url}
-          oninput={this.onDataChange}
-        />
-        <div id="QRContainer" afterCreate={this.onCreateQRElement}></div>
-        <button onclick={this.onDownloadButtonClick}>Download QR code</button>
+        <p-top-nav>
+          <p-top-nav-item id="ThemeMenuIem" onclick={this.onMenuItemClick}>
+            Thema
+          </p-top-nav-item>
+          <p-top-nav-item id="AboutMenuItem" onclick={this.onMenuItemClick}>
+            Over
+          </p-top-nav-item>
+        </p-top-nav>
+        <div>
+          <label for="UrlInput">URL</label>
+          <input
+            id="UrlInput"
+            type="url"
+            value={this.url}
+            oninput={this.onDataChange}
+          />
+          <div id="QRContainer" afterCreate={this.onCreateQRElement}></div>
+          <button onclick={this.onDownloadButtonClick}>Download QR code</button>
+        </div>
       </div>
     );
+  };
+
+  private onMenuItemClick = async () => {
+    this.themeService.getThemes();
   };
 
   private onCreateQRElement = (n: HTMLElement) => {
