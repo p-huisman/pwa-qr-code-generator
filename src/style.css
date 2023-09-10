@@ -122,20 +122,19 @@ button[part*="button"],
 }
 
 button[part*="primary-button"],
-::part(primary-button){
+::part(primary-button) {
   background-color: var(--color-munsell-green);
   color: var(--color-white);
 }
 
 button[part*="primary-button"]:hover,
 ::part(primary-button):hover,
-::part(primary-button):focus{
+::part(primary-button):focus {
   background-color: var(--color-munsell-green-darker);
 }
 
-
 ::part(button-primary):hover,
-::part(button-primary):focus{
+::part(button-primary):focus {
   background-color: var(--color-white);
   color: var(--color-munsell-green-darker);
 }
