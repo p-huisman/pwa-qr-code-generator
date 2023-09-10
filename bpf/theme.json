@@ -1,0 +1,26 @@
+{
+  "name": "BPF",
+  "url": "https://www.bpfschilders.nl/",
+  "options": {
+    "imageOptions": {
+      "hideBackgroundDots": false,
+      "imageSize": 1,
+      "margin": 0
+    },
+    "dotsOptions": {
+      "type": "square",
+      "color": "rgb(33,33,33)"
+    },
+    "backgroundOptions": {
+      "color": "rgba(255,255,255, 0)"
+    },
+    "cornersSquareOptions": {
+      "type": "square",
+      "color": "#c18e61"
+    },
+    "cornersDotOptions": {
+      "type": "square",
+      "color": "#563969"
+    }
+  }
+}

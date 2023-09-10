@@ -1,0 +1,26 @@
+{
+  "name": "PFZW",
+  "url": "https://pfzw.nl",
+  "options": {
+    "imageOptions": {
+      "hideBackgroundDots": false,
+      "imageSize": 1,
+      "margin": 0
+    },
+    "dotsOptions": {
+      "type": "square",
+      "color": "#393a3c"
+    },
+    "backgroundOptions": {
+      "color": "rgba(255,255,255, 0)"
+    },
+    "cornersSquareOptions": {
+      "type": "extra-rounded",
+      "color": "#404b96"
+    },
+    "cornersDotOptions": {
+      "type": "dot",
+      "color": "#404b96"
+    }
+  }
+}
